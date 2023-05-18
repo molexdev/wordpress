@@ -938,9 +938,9 @@ function wpmu_signup_blog_notification( $domain, $path, $title, $user_login, $us
 
 	// Send email with activation link.
 	if ( ! is_subdomain_install() || get_current_network_id() != 1 ) {
-		$activate_url = network_site_url( "wp-activate.php?key=$key" );
+		$activate_url = network_site_url( "activate.php?key=$key" );
 	} else {
-		$activate_url = "http://{$domain}{$path}wp-activate.php?key=$key"; // @todo Use *_url() API.
+		$activate_url = "http://{$domain}{$path}activate.php?key=$key"; // @todo Use *_url() API.
 	}
 
 	$activate_url = esc_url( $activate_url );
@@ -1103,7 +1103,7 @@ function wpmu_signup_user_notification( $user_login, $user_email, $key, $meta = 
 			$key,
 			$meta
 		),
-		site_url( "wp-activate.php?key=$key" )
+		site_url( "activate.php?key=$key" )
 	);
 
 	$subject = sprintf(
