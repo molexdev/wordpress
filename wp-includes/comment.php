@@ -3438,7 +3438,7 @@ function _close_comments_for_old_post( $open, $post_id ) {
 }
 
 /**
- * Handles the submission of a comment, usually posted to wp-comments-post.php via a comment form.
+ * Handles the submission of a comment, usually posted to comments-post.php via a comment form.
  *
  * This function expects unslashed data, as opposed to functions such as `wp_new_comment()` which
  * expect slashed data.
