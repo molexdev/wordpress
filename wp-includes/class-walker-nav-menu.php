@@ -224,7 +224,7 @@ class Walker_Nav_Menu extends Walker {
 			}
 		}
 
-		/** This filter is documented in wp-includes/post-template.php */
+		/** This filter is documented in includes/post-template.php */
 		$title = apply_filters( 'the_title', $menu_item->title, $menu_item->ID );
 
 		/**

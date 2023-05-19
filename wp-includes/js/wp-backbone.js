@@ -1,5 +1,5 @@
 /**
- * @output wp-includes/js/wp-backbone.js
+ * @output includes/js/wp-backbone.js
  */
 
 /** @namespace wp */

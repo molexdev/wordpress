@@ -511,7 +511,7 @@ class WP_Theme_JSON_Resolver {
 			}
 		}
 
-		/** This filter is documented in wp-includes/class-wp-theme-json-resolver.php */
+		/** This filter is documented in includes/class-wp-theme-json-resolver.php */
 		$theme_json   = apply_filters( 'wp_theme_json_data_user', new WP_Theme_JSON_Data( $config, 'custom' ) );
 		$config       = $theme_json->get_data();
 		static::$user = new WP_Theme_JSON( $config, 'custom' );

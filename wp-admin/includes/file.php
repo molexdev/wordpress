@@ -536,7 +536,7 @@ function wp_edit_theme_plugin_file( $args ) {
 			'Cache-Control' => 'no-cache',
 		);
 
-		/** This filter is documented in wp-includes/class-wp-http-streams.php */
+		/** This filter is documented in includes/class-wp-http-streams.php */
 		$sslverify = apply_filters( 'https_local_ssl_verify', false );
 
 		// Include Basic auth in loopback requests.

@@ -2155,7 +2155,7 @@ final class WP_Customize_Widgets {
 		if ( isset( $this->_captured_options[ $option_name ] ) ) {
 			$value = $this->_captured_options[ $option_name ];
 
-			/** This filter is documented in wp-includes/option.php */
+			/** This filter is documented in includes/option.php */
 			$value = apply_filters( 'option_' . $option_name, $value, $option_name );
 		}
 

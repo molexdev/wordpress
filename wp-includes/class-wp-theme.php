@@ -230,7 +230,7 @@ final class WP_Theme implements ArrayAccess {
 
 		// Initialize caching on first run.
 		if ( ! isset( self::$persistently_cache ) ) {
-			/** This action is documented in wp-includes/theme.php */
+			/** This action is documented in includes/theme.php */
 			self::$persistently_cache = apply_filters( 'wp_cache_themes_persistently', false, 'WP_Theme' );
 			if ( self::$persistently_cache ) {
 				wp_cache_add_global_groups( 'themes' );
@@ -1560,7 +1560,7 @@ final class WP_Theme implements ArrayAccess {
 			$path = $template_directory . '/' . $file;
 		}
 
-		/** This filter is documented in wp-includes/link-template.php */
+		/** This filter is documented in includes/link-template.php */
 		return apply_filters( 'theme_file_path', $path, $file );
 	}
 
@@ -1706,7 +1706,7 @@ final class WP_Theme implements ArrayAccess {
 			}
 		}
 
-		/** This filter is documented in wp-includes/class-wp-theme.php */
+		/** This filter is documented in includes/class-wp-theme.php */
 		return (array) apply_filters( 'site_allowed_themes', $allowed_themes[ $blog_id ], $blog_id );
 	}
 

@@ -543,7 +543,7 @@ switch ( $action ) {
 	case 'confirm_admin_email':
 		/*
 		 * Note that `is_user_logged_in()` will return false immediately after logging in
-		 * as the current user is not set, see wp-includes/pluggable.php.
+		 * as the current user is not set, see includes/pluggable.php.
 		 * However this action runs on a redirect after logging in.
 		 */
 		if ( ! is_user_logged_in() ) {
@@ -869,7 +869,7 @@ switch ( $action ) {
 
 				echo esc_html( $login_link_separator );
 
-				/** This filter is documented in wp-includes/general-template.php */
+				/** This filter is documented in includes/general-template.php */
 				echo apply_filters( 'register', $registration_url );
 			}
 
@@ -1015,7 +1015,7 @@ switch ( $action ) {
 
 				echo esc_html( $login_link_separator );
 
-				/** This filter is documented in wp-includes/general-template.php */
+				/** This filter is documented in includes/general-template.php */
 				echo apply_filters( 'register', $registration_url );
 			}
 
@@ -1483,7 +1483,7 @@ switch ( $action ) {
 				if ( get_option( 'users_can_register' ) ) {
 					$registration_url = sprintf( '<a href="%s">%s</a>', esc_url( wp_registration_url() ), __( 'Register' ) );
 
-					/** This filter is documented in wp-includes/general-template.php */
+					/** This filter is documented in includes/general-template.php */
 					echo apply_filters( 'register', $registration_url );
 
 					echo esc_html( $login_link_separator );

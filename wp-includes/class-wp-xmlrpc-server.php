@@ -1340,7 +1340,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			}
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.newPost', $args, $this );
 
 		unset( $content_struct['ID'] );
@@ -1741,7 +1741,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.editPost', $args, $this );
 
 		$post = get_post( $post_id, ARRAY_A );
@@ -1824,7 +1824,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.deletePost', $args, $this );
 
 		$post = get_post( $post_id, ARRAY_A );
@@ -1924,7 +1924,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getPost', $args, $this );
 
 		$post = get_post( $post_id, ARRAY_A );
@@ -1976,7 +1976,7 @@ class wp_xmlrpc_server extends IXR_Server {
 		if ( isset( $args[4] ) ) {
 			$fields = $args[4];
 		} else {
-			/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+			/** This action is documented in includes/class-wp-xmlrpc-server.php */
 			$fields = apply_filters( 'xmlrpc_default_post_fields', array( 'post', 'terms', 'custom_fields' ), 'wp.getPosts' );
 		}
 
@@ -1985,7 +1985,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getPosts', $args, $this );
 
 		$query = array();
@@ -2084,7 +2084,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.newTerm', $args, $this );
 
 		if ( ! taxonomy_exists( $content_struct['taxonomy'] ) ) {
@@ -2189,7 +2189,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.editTerm', $args, $this );
 
 		if ( ! taxonomy_exists( $content_struct['taxonomy'] ) ) {
@@ -2305,7 +2305,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.deleteTerm', $args, $this );
 
 		if ( ! taxonomy_exists( $taxonomy ) ) {
@@ -2384,7 +2384,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getTerm', $args, $this );
 
 		if ( ! taxonomy_exists( $taxonomy ) ) {
@@ -2449,7 +2449,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getTerms', $args, $this );
 
 		if ( ! taxonomy_exists( $taxonomy ) ) {
@@ -2555,7 +2555,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getTaxonomy', $args, $this );
 
 		if ( ! taxonomy_exists( $taxonomy ) ) {
@@ -2604,7 +2604,7 @@ class wp_xmlrpc_server extends IXR_Server {
 		if ( isset( $args[4] ) ) {
 			$fields = $args[4];
 		} else {
-			/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+			/** This action is documented in includes/class-wp-xmlrpc-server.php */
 			$fields = apply_filters( 'xmlrpc_default_taxonomy_fields', array( 'labels', 'cap', 'object_type' ), 'wp.getTaxonomies' );
 		}
 
@@ -2613,7 +2613,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getTaxonomies', $args, $this );
 
 		$taxonomies = get_taxonomies( $filter, 'objects' );
@@ -2699,7 +2699,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getUser', $args, $this );
 
 		if ( ! current_user_can( 'edit_user', $user_id ) ) {
@@ -2753,7 +2753,7 @@ class wp_xmlrpc_server extends IXR_Server {
 		if ( isset( $args[4] ) ) {
 			$fields = $args[4];
 		} else {
-			/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+			/** This action is documented in includes/class-wp-xmlrpc-server.php */
 			$fields = apply_filters( 'xmlrpc_default_user_fields', array( 'all' ), 'wp.getUsers' );
 		}
 
@@ -2762,7 +2762,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getUsers', $args, $this );
 
 		if ( ! current_user_can( 'list_users' ) ) {
@@ -2833,7 +2833,7 @@ class wp_xmlrpc_server extends IXR_Server {
 		if ( isset( $args[3] ) ) {
 			$fields = $args[3];
 		} else {
-			/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+			/** This action is documented in includes/class-wp-xmlrpc-server.php */
 			$fields = apply_filters( 'xmlrpc_default_user_fields', array( 'all' ), 'wp.getProfile' );
 		}
 
@@ -2842,7 +2842,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getProfile', $args, $this );
 
 		if ( ! current_user_can( 'edit_user', $user->ID ) ) {
@@ -2892,7 +2892,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.editProfile', $args, $this );
 
 		if ( ! current_user_can( 'edit_user', $user->ID ) ) {
@@ -2981,7 +2981,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 401, __( 'Sorry, you are not allowed to edit this page.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getPage', $args, $this );
 
 		// If we found the page then format the data.
@@ -3024,7 +3024,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 401, __( 'Sorry, you are not allowed to edit pages.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getPages', $args, $this );
 
 		$pages     = get_posts(
@@ -3079,7 +3079,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.newPage', $args, $this );
 
 		// Mark this as content for a page.
@@ -3116,7 +3116,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.deletePage', $args, $this );
 
 		// Get the current page based on the 'page_id' and
@@ -3183,7 +3183,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.editPage', $args, $this );
 
 		// Get the page data and make sure it is a page.
@@ -3246,7 +3246,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 401, __( 'Sorry, you are not allowed to edit pages.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getPageList', $args, $this );
 
 		// Get list of page IDs and titles.
@@ -3307,7 +3307,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 401, __( 'Sorry, you are not allowed to edit posts.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getAuthors', $args, $this );
 
 		$authors = array();
@@ -3351,7 +3351,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 401, __( 'Sorry, you must be able to edit posts on this site in order to view tags.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getKeywords', $args, $this );
 
 		$tags = array();
@@ -3401,7 +3401,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.newCategory', $args, $this );
 
 		// Make sure the user is allowed to add a category.
@@ -3484,7 +3484,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.deleteCategory', $args, $this );
 
 		if ( ! current_user_can( 'delete_term', $category_id ) ) {
@@ -3541,7 +3541,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 401, __( 'Sorry, you must be able to edit posts on this site in order to view categories.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.suggestCategories', $args, $this );
 
 		$category_suggestions = array();
@@ -3587,7 +3587,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getComment', $args, $this );
 
 		$comment = get_comment( $comment_id );
@@ -3641,7 +3641,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getComments', $args, $this );
 
 		if ( isset( $struct['status'] ) ) {
@@ -3736,7 +3736,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 403, __( 'Sorry, you are not allowed to delete this comment.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.deleteComment', $args, $this );
 
 		$status = wp_delete_comment( $comment_id );
@@ -3804,7 +3804,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 403, __( 'Sorry, you are not allowed to moderate or edit this comment.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.editComment', $args, $this );
 		$comment = array(
 			'comment_ID' => $comment_id,
@@ -3990,14 +3990,14 @@ class wp_xmlrpc_server extends IXR_Server {
 
 		$comment['comment_parent'] = isset( $content_struct['comment_parent'] ) ? absint( $content_struct['comment_parent'] ) : 0;
 
-		/** This filter is documented in wp-includes/comment.php */
+		/** This filter is documented in includes/comment.php */
 		$allow_empty = apply_filters( 'allow_empty_comment', false, $comment );
 
 		if ( ! $allow_empty && '' === $comment['comment_content'] ) {
 			return new IXR_Error( 403, __( 'Comment is required.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.newComment', $args, $this );
 
 		$comment_id = wp_new_comment( $comment, true );
@@ -4051,7 +4051,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 403, __( 'Sorry, you are not allowed to access details about this site.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getCommentStatusList', $args, $this );
 
 		return get_comment_statuses();
@@ -4093,7 +4093,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 403, __( 'Sorry, you are not allowed to access details of this post.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getCommentCount', $args, $this );
 
 		$count = wp_count_comments( $post_id );
@@ -4135,7 +4135,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 403, __( 'Sorry, you are not allowed to access details about this site.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getPostStatusList', $args, $this );
 
 		return get_post_statuses();
@@ -4170,7 +4170,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 403, __( 'Sorry, you are not allowed to access details about this site.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getPageStatusList', $args, $this );
 
 		return get_page_statuses();
@@ -4363,7 +4363,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 403, __( 'Sorry, you are not allowed to upload files.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getMediaItem', $args, $this );
 
 		$attachment = get_post( $attachment_id );
@@ -4418,7 +4418,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 401, __( 'Sorry, you are not allowed to upload files.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getMediaLibrary', $args, $this );
 
 		$parent_id = ( isset( $struct['parent_id'] ) ) ? absint( $struct['parent_id'] ) : '';
@@ -4474,7 +4474,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 403, __( 'Sorry, you are not allowed to access details about this site.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getPostFormats', $args, $this );
 
 		$formats = get_post_format_strings();
@@ -4554,7 +4554,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getPostType', $args, $this );
 
 		if ( ! post_type_exists( $post_type_name ) ) {
@@ -4602,7 +4602,7 @@ class wp_xmlrpc_server extends IXR_Server {
 		if ( isset( $args[4] ) ) {
 			$fields = $args[4];
 		} else {
-			/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+			/** This action is documented in includes/class-wp-xmlrpc-server.php */
 			$fields = apply_filters( 'xmlrpc_default_posttype_fields', array( 'labels', 'cap', 'taxonomies' ), 'wp.getPostTypes' );
 		}
 
@@ -4611,7 +4611,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getPostTypes', $args, $this );
 
 		$post_types = get_post_types( $filter, 'objects' );
@@ -4681,7 +4681,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.getRevisions', $args, $this );
 
 		$post = get_post( $post_id );
@@ -4755,7 +4755,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.restoreRevision', $args, $this );
 
 		$revision = wp_get_post_revision( $revision_id );
@@ -4826,7 +4826,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'blogger.getUsersBlogs', $args, $this );
 
 		$is_admin = current_user_can( 'manage_options' );
@@ -4910,7 +4910,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 401, __( 'Sorry, you are not allowed to access user data on this site.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'blogger.getUserInfo', $args, $this );
 
 		$struct = array(
@@ -4960,7 +4960,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 401, __( 'Sorry, you are not allowed to edit this post.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'blogger.getPost', $args, $this );
 
 		$categories = implode( ',', wp_get_post_categories( $post_id ) );
@@ -5017,7 +5017,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 401, __( 'Sorry, you are not allowed to edit posts.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'blogger.getRecentPosts', $args, $this );
 
 		$posts_list = wp_get_recent_posts( $query );
@@ -5107,7 +5107,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'blogger.newPost', $args, $this );
 
 		$cap = ( $publish ) ? 'publish_posts' : 'edit_posts';
@@ -5184,7 +5184,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'blogger.editPost', $args, $this );
 
 		$actual_post = get_post( $post_id, ARRAY_A );
@@ -5258,7 +5258,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'blogger.deletePost', $args, $this );
 
 		$actual_post = get_post( $post_id, ARRAY_A );
@@ -5346,7 +5346,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'metaWeblog.newPost', $args, $this );
 
 		$page_template = '';
@@ -5721,7 +5721,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'metaWeblog.editPost', $args, $this );
 
 		$postdata = get_post( $post_id, ARRAY_A );
@@ -6058,7 +6058,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 401, __( 'Sorry, you are not allowed to edit this post.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'metaWeblog.getPost', $args, $this );
 
 		if ( '' !== $postdata['post_date'] ) {
@@ -6199,7 +6199,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 401, __( 'Sorry, you are not allowed to edit posts.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'metaWeblog.getRecentPosts', $args, $this );
 
 		$posts_list = wp_get_recent_posts( $query );
@@ -6320,7 +6320,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 401, __( 'Sorry, you must be able to edit posts on this site in order to view categories.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'metaWeblog.getCategories', $args, $this );
 
 		$categories_struct = array();
@@ -6381,7 +6381,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'metaWeblog.newMediaObject', $args, $this );
 
 		if ( ! current_user_can( 'upload_files' ) ) {
@@ -6500,7 +6500,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'mt.getRecentPostTitles', $args, $this );
 
 		$posts_list = wp_get_recent_posts( $query );
@@ -6562,7 +6562,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 401, __( 'Sorry, you must be able to edit posts on this site in order to view categories.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'mt.getCategoryList', $args, $this );
 
 		$categories_struct = array();
@@ -6620,7 +6620,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error( 401, __( 'Sorry, you are not allowed to edit this post.' ) );
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'mt.getPostCategories', $args, $this );
 
 		$categories = array();
@@ -6667,7 +6667,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'mt.setPostCategories', $args, $this );
 
 		if ( ! get_post( $post_id ) ) {
@@ -6696,7 +6696,7 @@ class wp_xmlrpc_server extends IXR_Server {
 	 * @return array
 	 */
 	public function mt_supportedMethods() {
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'mt.supportedMethods', array(), $this );
 
 		return array_keys( $this->methods );
@@ -6708,7 +6708,7 @@ class wp_xmlrpc_server extends IXR_Server {
 	 * @since 1.5.0
 	 */
 	public function mt_supportedTextFilters() {
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'mt.supportedTextFilters', array(), $this );
 
 		/**
@@ -6734,7 +6734,7 @@ class wp_xmlrpc_server extends IXR_Server {
 	public function mt_getTrackbackPings( $post_id ) {
 		global $wpdb;
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'mt.getTrackbackPings', $post_id, $this );
 
 		$actual_post = get_post( $post_id, ARRAY_A );
@@ -6791,7 +6791,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return $this->error;
 		}
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'mt.publishPost', $args, $this );
 
 		$postdata = get_post( $post_id, ARRAY_A );
@@ -6835,7 +6835,7 @@ class wp_xmlrpc_server extends IXR_Server {
 	public function pingback_ping( $args ) {
 		global $wpdb;
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'pingback.ping', $args, $this );
 
 		$this->escape( $args );
@@ -6930,7 +6930,7 @@ class wp_xmlrpc_server extends IXR_Server {
 
 		$remote_ip = preg_replace( '/[^0-9a-fA-F:., ]/', '', $_SERVER['REMOTE_ADDR'] );
 
-		/** This filter is documented in wp-includes/class-wp-http.php */
+		/** This filter is documented in includes/class-wp-http.php */
 		$user_agent = apply_filters( 'http_headers_useragent', 'WordPress/' . get_bloginfo( 'version' ) . '; ' . get_bloginfo( 'url' ), $pagelinkedfrom );
 
 		// Let's check the remote site.
@@ -7077,7 +7077,7 @@ class wp_xmlrpc_server extends IXR_Server {
 	public function pingback_extensions_getPingbacks( $url ) {
 		global $wpdb;
 
-		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
+		/** This action is documented in includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'pingback.extensions.getPingbacks', $url, $this );
 
 		$url = $this->escape( $url );

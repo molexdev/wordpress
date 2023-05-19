@@ -794,7 +794,7 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
 /**
- * @output wp-includes/js/media-audiovideo.js
+ * @output includes/js/media-audiovideo.js
  */
 
 var media = wp.media,

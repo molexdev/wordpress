@@ -1,7 +1,7 @@
 /**
  * Cookie functions.
  *
- * @output wp-includes/js/utils.js
+ * @output includes/js/utils.js
  */
 
 /* global userSettings, getAllUserSettings, wpCookies, setUserSetting */

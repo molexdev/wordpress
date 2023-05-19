@@ -1,5 +1,5 @@
 /**
- * @output wp-includes/js/customize-selective-refresh.js
+ * @output includes/js/customize-selective-refresh.js
  */
 
 /* global jQuery, JSON, _customizePartialRefreshExports, console */

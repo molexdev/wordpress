@@ -727,7 +727,7 @@ class WP_REST_Server {
 
 					$response = $this->dispatch( $request );
 
-					/** This filter is documented in wp-includes/rest-api/class-wp-rest-server.php */
+					/** This filter is documented in includes/rest-api/class-wp-rest-server.php */
 					$response = apply_filters( 'rest_post_dispatch', rest_ensure_response( $response ), $this, $request );
 
 					$this->embed_cache[ $item['href'] ] = $this->response_to_data( $response, false );
@@ -1694,7 +1694,7 @@ class WP_REST_Server {
 			$clean_request->set_attributes( array() );
 			$clean_request->set_default_params( array() );
 
-			/** This filter is documented in wp-includes/rest-api/class-wp-rest-server.php */
+			/** This filter is documented in includes/rest-api/class-wp-rest-server.php */
 			$result = apply_filters( 'rest_pre_dispatch', null, $this, $clean_request );
 
 			if ( empty( $result ) ) {
@@ -1722,7 +1722,7 @@ class WP_REST_Server {
 				}
 			}
 
-			/** This filter is documented in wp-includes/rest-api/class-wp-rest-server.php */
+			/** This filter is documented in includes/rest-api/class-wp-rest-server.php */
 			$result = apply_filters( 'rest_post_dispatch', rest_ensure_response( $result ), $this, $single_request );
 
 			$responses[] = $this->envelope_response( $result, false )->get_data();

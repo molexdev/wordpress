@@ -10339,7 +10339,7 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
 /**
- * @output wp-includes/js/media-views.js
+ * @output includes/js/media-views.js
  */
 
 var media = wp.media,

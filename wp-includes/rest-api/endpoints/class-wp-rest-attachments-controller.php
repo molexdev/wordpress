@@ -353,7 +353,7 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 
 		$request->set_param( 'context', 'edit' );
 
-		/** This action is documented in wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php */
+		/** This action is documented in includes/rest-api/endpoints/class-wp-rest-attachments-controller.php */
 		do_action( 'rest_after_insert_attachment', $attachment, $request, false );
 
 		wp_after_insert_post( $attachment, true, $attachment_before );
@@ -731,16 +731,16 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 		if ( in_array( 'description', $fields, true ) ) {
 			$data['description'] = array(
 				'raw'      => $post->post_content,
-				/** This filter is documented in wp-includes/post-template.php */
+				/** This filter is documented in includes/post-template.php */
 				'rendered' => apply_filters( 'the_content', $post->post_content ),
 			);
 		}
 
 		if ( in_array( 'caption', $fields, true ) ) {
-			/** This filter is documented in wp-includes/post-template.php */
+			/** This filter is documented in includes/post-template.php */
 			$caption = apply_filters( 'get_the_excerpt', $post->post_excerpt, $post );
 
-			/** This filter is documented in wp-includes/post-template.php */
+			/** This filter is documented in includes/post-template.php */
 			$caption = apply_filters( 'the_excerpt', $caption );
 
 			$data['caption'] = array(

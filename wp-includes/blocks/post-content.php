@@ -50,7 +50,7 @@ function render_block_core_post_content( $attributes, $content, $block ) {
 		$content .= wp_link_pages( array( 'echo' => 0 ) );
 	}
 
-	/** This filter is documented in wp-includes/post-template.php */
+	/** This filter is documented in includes/post-template.php */
 	$content = apply_filters( 'the_content', str_replace( ']]>', ']]&gt;', $content ) );
 	unset( $seen_ids[ $post_id ] );
 

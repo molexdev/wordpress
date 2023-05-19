@@ -1392,7 +1392,7 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
 /**
- * @output wp-includes/js/media-models.js
+ * @output includes/js/media-models.js
  */
 
 var $ = jQuery,
@@ -1501,7 +1501,7 @@ _.extend( media, /** @lends wp.media */{
 	 *
 	 * Fetch a JavaScript template for an id, and return a templating function for it.
 	 *
-	 * See wp.template() in `wp-includes/js/wp-util.js`.
+	 * See wp.template() in `includes/js/wp-util.js`.
 	 *
 	 * @borrows wp.template as template
 	 */
@@ -1511,7 +1511,7 @@ _.extend( media, /** @lends wp.media */{
 	 * media.post( [action], [data] )
 	 *
 	 * Sends a POST request to WordPress.
-	 * See wp.ajax.post() in `wp-includes/js/wp-util.js`.
+	 * See wp.ajax.post() in `includes/js/wp-util.js`.
 	 *
 	 * @borrows wp.ajax.post as post
 	 */
@@ -1521,7 +1521,7 @@ _.extend( media, /** @lends wp.media */{
 	 * media.ajax( [action], [options] )
 	 *
 	 * Sends an XHR request to WordPress.
-	 * See wp.ajax.send() in `wp-includes/js/wp-util.js`.
+	 * See wp.ajax.send() in `includes/js/wp-util.js`.
 	 *
 	 * @borrows wp.ajax.send as ajax
 	 */

@@ -31,7 +31,7 @@ function get_locale() {
 	global $locale, $wp_local_package;
 
 	if ( isset( $locale ) ) {
-		/** This filter is documented in wp-includes/l10n.php */
+		/** This filter is documented in includes/l10n.php */
 		return apply_filters( 'locale', $locale );
 	}
 
@@ -958,7 +958,7 @@ function load_muplugin_textdomain( $domain, $mu_plugin_rel_path = '' ) {
 	/** @var WP_Textdomain_Registry $wp_textdomain_registry */
 	global $wp_textdomain_registry;
 
-	/** This filter is documented in wp-includes/l10n.php */
+	/** This filter is documented in includes/l10n.php */
 	$locale = apply_filters( 'plugin_locale', determine_locale(), $domain );
 
 	$mofile = $domain . '-' . $locale . '.mo';

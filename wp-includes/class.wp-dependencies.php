@@ -2,7 +2,7 @@
 /**
  * Dependencies API: WP_Dependencies base class
  *
- * This file is deprecated, use 'wp-includes/class-wp-dependencies.php' instead.
+ * This file is deprecated, use 'includes/class-wp-dependencies.php' instead.
  *
  * @deprecated 6.1.0
  * @package WordPress

@@ -959,7 +959,7 @@ function wp_get_attachment_image_src( $attachment_id, $size = 'thumbnail', $icon
 			$src = wp_mime_type_icon( $attachment_id );
 
 			if ( $src ) {
-				/** This filter is documented in wp-includes/post.php */
+				/** This filter is documented in includes/post.php */
 				$icon_dir = apply_filters( 'icon_dir', ABSPATH . WPINC . '/images/media' );
 
 				$src_file               = $icon_dir . '/' . wp_basename( $src );
@@ -2555,7 +2555,7 @@ function gallery_shortcode( $attr ) {
 			#{$selector} .gallery-caption {
 				margin-left: 0;
 			}
-			/* see gallery_shortcode() in wp-includes/media.php */
+			/* see gallery_shortcode() in includes/media.php */
 		</style>\n\t\t";
 	}
 
@@ -3869,7 +3869,7 @@ function wp_get_image_editor( $path, $args = array() ) {
 
 	// Check and set the output mime type mapped to the input type.
 	if ( isset( $args['mime_type'] ) ) {
-		/** This filter is documented in wp-includes/class-wp-image-editor.php */
+		/** This filter is documented in includes/class-wp-image-editor.php */
 		$output_format = apply_filters( 'image_editor_output_format', array(), $path, $args['mime_type'] );
 		if ( isset( $output_format[ $args['mime_type'] ] ) ) {
 			$args['output_mime_type'] = $output_format[ $args['mime_type'] ];
@@ -4088,7 +4088,7 @@ function wp_plupload_default_settings() {
  *     @type string $filesizeHumanReadable Filesize of the attachment in human readable format (e.g. 1 MB).
  *     @type int    $filesizeInBytes       Filesize of the attachment in bytes.
  *     @type int    $height                If the attachment is an image, represents the height of the image in pixels.
- *     @type string $icon                  Icon URL of the attachment (e.g. /wp-includes/images/media/archive.png).
+ *     @type string $icon                  Icon URL of the attachment (e.g. /includes/images/media/archive.png).
  *     @type int    $id                    ID of the attachment.
  *     @type string $link                  URL to the attachment.
  *     @type int    $menuOrder             Menu order of the attachment post.
@@ -4233,7 +4233,7 @@ function wp_prepare_attachment_for_js( $attachment ) {
 		 */
 		foreach ( $possible_sizes as $size => $label ) {
 
-			/** This filter is documented in wp-includes/media.php */
+			/** This filter is documented in includes/media.php */
 			$downsize = apply_filters( 'image_downsize', false, $attachment->ID, $size );
 
 			if ( $downsize ) {

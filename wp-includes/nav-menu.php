@@ -853,7 +853,7 @@ function wp_setup_nav_menu_item( $menu_item ) {
 
 				if ( $original_object ) {
 					$menu_item->url = get_permalink( $original_object->ID );
-					/** This filter is documented in wp-includes/post-template.php */
+					/** This filter is documented in includes/post-template.php */
 					$original_title = apply_filters( 'the_title', $original_object->post_title, $original_object->ID );
 				} else {
 					$menu_item->url      = '';
@@ -959,10 +959,10 @@ function wp_setup_nav_menu_item( $menu_item ) {
 			$menu_item->url    = get_permalink( $menu_item->ID );
 			$menu_item->target = '';
 
-			/** This filter is documented in wp-includes/nav-menu.php */
+			/** This filter is documented in includes/nav-menu.php */
 			$menu_item->attr_title = apply_filters( 'nav_menu_attr_title', '' );
 
-			/** This filter is documented in wp-includes/nav-menu.php */
+			/** This filter is documented in includes/nav-menu.php */
 			$menu_item->description = apply_filters( 'nav_menu_description', '' );
 			$menu_item->classes     = array();
 			$menu_item->xfn         = '';

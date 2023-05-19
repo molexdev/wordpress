@@ -3030,7 +3030,7 @@ function wp_count_posts( $type = 'post', $perm = '' ) {
 			}
 		}
 
-		/** This filter is documented in wp-includes/post.php */
+		/** This filter is documented in includes/post.php */
 		return apply_filters( 'wp_count_posts', $counts, $type, $perm );
 	}
 
@@ -4876,19 +4876,19 @@ function wp_publish_post( $post ) {
 	$post->post_status = 'publish';
 	wp_transition_post_status( 'publish', $old_status, $post );
 
-	/** This action is documented in wp-includes/post.php */
+	/** This action is documented in includes/post.php */
 	do_action( "edit_post_{$post->post_type}", $post->ID, $post );
 
-	/** This action is documented in wp-includes/post.php */
+	/** This action is documented in includes/post.php */
 	do_action( 'edit_post', $post->ID, $post );
 
-	/** This action is documented in wp-includes/post.php */
+	/** This action is documented in includes/post.php */
 	do_action( "save_post_{$post->post_type}", $post->ID, $post, true );
 
-	/** This action is documented in wp-includes/post.php */
+	/** This action is documented in includes/post.php */
 	do_action( 'save_post', $post->ID, $post, true );
 
-	/** This action is documented in wp-includes/post.php */
+	/** This action is documented in includes/post.php */
 	do_action( 'wp_insert_post', $post->ID, $post, true );
 
 	wp_after_insert_post( $post, true, $post_before );
@@ -5989,7 +5989,7 @@ function get_pages( $args = array() ) {
 
 		// Convert to WP_Post instances.
 		$pages = array_map( 'get_post', $cache );
-		/** This filter is documented in wp-includes/post.php */
+		/** This filter is documented in includes/post.php */
 		$pages = apply_filters( 'get_pages', $pages, $parsed_args );
 
 		return $pages;
@@ -6150,7 +6150,7 @@ function get_pages( $args = array() ) {
 	if ( empty( $pages ) ) {
 		wp_cache_set( $cache_key, array(), 'posts' );
 
-		/** This filter is documented in wp-includes/post.php */
+		/** This filter is documented in includes/post.php */
 		$pages = apply_filters( 'get_pages', array(), $parsed_args );
 
 		return $pages;
@@ -6379,13 +6379,13 @@ function wp_delete_attachment( $post_id, $force_delete = false ) {
 		delete_metadata_by_mid( 'post', $mid );
 	}
 
-	/** This action is documented in wp-includes/post.php */
+	/** This action is documented in includes/post.php */
 	do_action( 'delete_post', $post_id, $post );
 	$result = $wpdb->delete( $wpdb->posts, array( 'ID' => $post_id ) );
 	if ( ! $result ) {
 		return false;
 	}
-	/** This action is documented in wp-includes/post.php */
+	/** This action is documented in includes/post.php */
 	do_action( 'deleted_post', $post_id, $post );
 
 	wp_delete_attachment_files( $post_id, $meta, $backup_sizes, $file );
@@ -8077,7 +8077,7 @@ function wp_untrash_post_set_previous_status( $new_status, $post_id, $previous_s
  * Returns whether the post can be edited in the block editor.
  *
  * @since 5.0.0
- * @since 6.1.0 Moved to wp-includes from wp-admin.
+ * @since 6.1.0 Moved to includes from wp-admin.
  *
  * @param int|WP_Post $post Post ID or WP_Post object.
  * @return bool Whether the post can be edited in the block editor.
@@ -8115,7 +8115,7 @@ function use_block_editor_for_post( $post ) {
  * REST API, then it won't work with the block editor.
  *
  * @since 5.0.0
- * @since 6.1.0 Moved to wp-includes from wp-admin.
+ * @since 6.1.0 Moved to includes from wp-admin.
  *
  * @param string $post_type The post type.
  * @return bool Whether the post type can be edited with the block editor.

@@ -366,7 +366,7 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 		$request->set_param( 'context', 'edit' );
 
 		$post = get_post( $template->wp_id );
-		/** This action is documented in wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php */
+		/** This action is documented in includes/rest-api/endpoints/class-wp-rest-posts-controller.php */
 		do_action( "rest_after_insert_{$this->post_type}", $post, $request, false );
 
 		wp_after_insert_post( $post, $update, $post_before );
@@ -426,7 +426,7 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 			return $fields_update;
 		}
 
-		/** This action is documented in wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php */
+		/** This action is documented in includes/rest-api/endpoints/class-wp-rest-posts-controller.php */
 		do_action( "rest_after_insert_{$this->post_type}", $post, $request, true );
 
 		wp_after_insert_post( $post, false, null );
@@ -677,7 +677,7 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 
 		if ( rest_is_field_included( 'title.rendered', $fields ) ) {
 			if ( $template->wp_id ) {
-				/** This filter is documented in wp-includes/post-template.php */
+				/** This filter is documented in includes/post-template.php */
 				$data['title']['rendered'] = apply_filters( 'the_title', $template->title, $template->wp_id );
 			} else {
 				$data['title']['rendered'] = $template->title;

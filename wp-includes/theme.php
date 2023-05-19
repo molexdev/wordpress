@@ -1035,7 +1035,7 @@ function get_theme_mod( $name, $default_value = false ) {
 		}
 	}
 
-	/** This filter is documented in wp-includes/theme.php */
+	/** This filter is documented in includes/theme.php */
 	return apply_filters( "theme_mod_{$name}", $default_value );
 }
 
@@ -3074,7 +3074,7 @@ function current_theme_supports( $feature, ...$args ) {
 
 	// If no args passed then no extra checks need to be performed.
 	if ( ! $args ) {
-		/** This filter is documented in wp-includes/theme.php */
+		/** This filter is documented in includes/theme.php */
 		return apply_filters( "current_theme_supports-{$feature}", true, $args, $_wp_theme_features[ $feature ] ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 	}
 
@@ -3400,7 +3400,7 @@ function check_theme_switched() {
 			 */
 			do_action( 'after_switch_theme', $old_theme->get( 'Name' ), $old_theme );
 		} else {
-			/** This action is documented in wp-includes/theme.php */
+			/** This action is documented in includes/theme.php */
 			do_action( 'after_switch_theme', $stylesheet, $old_theme );
 		}
 
@@ -3573,7 +3573,7 @@ function _wp_customize_publish_changeset( $new_status, $old_status, $changeset_p
 		remove_action( 'customize_register', array( $wp_customize, 'register_controls' ) );
 		$wp_customize->register_controls();
 
-		/** This filter is documented in wp-includes/class-wp-customize-manager.php */
+		/** This filter is documented in includes/class-wp-customize-manager.php */
 		do_action( 'customize_register', $wp_customize );
 	}
 	$wp_customize->_publish_changeset_values( $changeset_post->ID );

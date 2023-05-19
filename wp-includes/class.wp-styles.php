@@ -2,7 +2,7 @@
 /**
  * Dependencies API: WP_Styles class
  *
- * This file is deprecated, use 'wp-includes/class-wp-styles.php' instead.
+ * This file is deprecated, use 'includes/class-wp-styles.php' instead.
  *
  * @deprecated 6.1.0
  * @package WordPress

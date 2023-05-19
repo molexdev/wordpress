@@ -629,12 +629,12 @@ class WP_User {
 				continue;
 			}
 
-			/** This action is documented in wp-includes/class-wp-user.php */
+			/** This action is documented in includes/class-wp-user.php */
 			do_action( 'remove_user_role', $this->ID, $old_role );
 		}
 
 		if ( $role && ! in_array( $role, $old_roles, true ) ) {
-			/** This action is documented in wp-includes/class-wp-user.php */
+			/** This action is documented in includes/class-wp-user.php */
 			do_action( 'add_user_role', $this->ID, $role );
 		}
 

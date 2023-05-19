@@ -1109,19 +1109,19 @@ function get_block_file_template( $id, $template_type = 'wp_template' ) {
 
 	$parts = explode( '//', $id, 2 );
 	if ( count( $parts ) < 2 ) {
-		/** This filter is documented in wp-includes/block-template-utils.php */
+		/** This filter is documented in includes/block-template-utils.php */
 		return apply_filters( 'get_block_file_template', null, $id, $template_type );
 	}
 	list( $theme, $slug ) = $parts;
 
 	if ( get_stylesheet() !== $theme ) {
-		/** This filter is documented in wp-includes/block-template-utils.php */
+		/** This filter is documented in includes/block-template-utils.php */
 		return apply_filters( 'get_block_file_template', null, $id, $template_type );
 	}
 
 	$template_file = _get_block_template_file( $template_type, $slug );
 	if ( null === $template_file ) {
-		/** This filter is documented in wp-includes/block-template-utils.php */
+		/** This filter is documented in includes/block-template-utils.php */
 		return apply_filters( 'get_block_file_template', null, $id, $template_type );
 	}
 

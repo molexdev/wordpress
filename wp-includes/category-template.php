@@ -142,7 +142,7 @@ function get_the_category_list( $separator = '', $parents = '', $post_id = false
 	global $wp_rewrite;
 
 	if ( ! is_object_in_taxonomy( get_post_type( $post_id ), 'category' ) ) {
-		/** This filter is documented in wp-includes/category-template.php */
+		/** This filter is documented in includes/category-template.php */
 		return apply_filters( 'the_category', '', $separator, $parents );
 	}
 
@@ -158,7 +158,7 @@ function get_the_category_list( $separator = '', $parents = '', $post_id = false
 	$categories = apply_filters( 'the_category_list', get_the_category( $post_id ), $post_id );
 
 	if ( empty( $categories ) ) {
-		/** This filter is documented in wp-includes/category-template.php */
+		/** This filter is documented in includes/category-template.php */
 		return apply_filters( 'the_category', __( 'Uncategorized' ), $separator, $parents );
 	}
 
@@ -442,7 +442,7 @@ function wp_dropdown_categories( $args = '' ) {
 
 		if ( $parsed_args['show_option_all'] ) {
 
-			/** This filter is documented in wp-includes/category-template.php */
+			/** This filter is documented in includes/category-template.php */
 			$show_option_all = apply_filters( 'list_cats', $parsed_args['show_option_all'], null );
 			$selected        = ( '0' === (string) $parsed_args['selected'] ) ? " selected='selected'" : '';
 			$output         .= "\t<option value='0'$selected>$show_option_all</option>\n";
@@ -450,7 +450,7 @@ function wp_dropdown_categories( $args = '' ) {
 
 		if ( $parsed_args['show_option_none'] ) {
 
-			/** This filter is documented in wp-includes/category-template.php */
+			/** This filter is documented in includes/category-template.php */
 			$show_option_none = apply_filters( 'list_cats', $parsed_args['show_option_none'], null );
 			$selected         = selected( $option_none_value, $parsed_args['selected'], false );
 			$output          .= "\t<option value='" . esc_attr( $option_none_value ) . "'$selected>$show_option_none</option>\n";

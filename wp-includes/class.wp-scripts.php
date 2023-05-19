@@ -2,7 +2,7 @@
 /**
  * Dependencies API: WP_Scripts class
  *
- * This file is deprecated, use 'wp-includes/class-wp-scripts.php' instead.
+ * This file is deprecated, use 'includes/class-wp-scripts.php' instead.
  *
  * @deprecated 6.1.0
  * @package WordPress

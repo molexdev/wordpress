@@ -193,7 +193,7 @@ function _wp_personal_data_handle_actions() {
  * @access private
  */
 function _wp_personal_data_cleanup_requests() {
-	/** This filter is documented in wp-includes/user.php */
+	/** This filter is documented in includes/user.php */
 	$expires = (int) apply_filters( 'user_request_key_expiration', DAY_IN_SECONDS );
 
 	$requests_query = new WP_Query(
@@ -600,7 +600,7 @@ function wp_privacy_send_personal_data_export_email( $request_id ) {
 		$switched_locale = switch_to_locale( get_locale() );
 	}
 
-	/** This filter is documented in wp-includes/functions.php */
+	/** This filter is documented in includes/functions.php */
 	$expiration      = apply_filters( 'wp_privacy_export_expiration', 3 * DAY_IN_SECONDS );
 	$expiration_date = date_i18n( get_option( 'date_format' ), time() + $expiration );
 

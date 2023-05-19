@@ -722,10 +722,10 @@ function update_user_status( $id, $pref, $value, $deprecated = null ) {
 
 	if ( 'spam' === $pref ) {
 		if ( $value == 1 ) {
-			/** This filter is documented in wp-includes/user.php */
+			/** This filter is documented in includes/user.php */
 			do_action( 'make_spam_user', $id );
 		} else {
-			/** This filter is documented in wp-includes/user.php */
+			/** This filter is documented in includes/user.php */
 			do_action( 'make_ham_user', $id );
 		}
 	}

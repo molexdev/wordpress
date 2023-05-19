@@ -1255,7 +1255,7 @@ function wp_nav_menu_update_menu_items( $nav_menu_selected_id, $nav_menu_selecte
 
 	wp_defer_term_counting( false );
 
-	/** This action is documented in wp-includes/nav-menu.php */
+	/** This action is documented in includes/nav-menu.php */
 	do_action( 'wp_update_nav_menu', $nav_menu_selected_id );
 
 	$messages[] = '<div id="message" class="updated notice is-dismissible"><p>' .

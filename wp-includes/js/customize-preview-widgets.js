@@ -1,5 +1,5 @@
 /**
- * @output wp-includes/js/customize-preview-widgets.js
+ * @output includes/js/customize-preview-widgets.js
  */
 
 /* global _wpWidgetCustomizerPreviewSettings */

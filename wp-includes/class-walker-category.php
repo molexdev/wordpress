@@ -102,7 +102,7 @@ class Walker_Category extends Walker {
 		// Restores the more descriptive, specific name for use within this method.
 		$category = $data_object;
 
-		/** This filter is documented in wp-includes/category-template.php */
+		/** This filter is documented in includes/category-template.php */
 		$cat_name = apply_filters( 'list_cats', esc_attr( $category->name ), $category );
 
 		// Don't generate an element if the category name is empty.

@@ -2548,7 +2548,7 @@ function comment_form( $args = array(), $post = null ) {
 			sprintf(
 				/* translators: %s: Login URL. */
 				__( 'You must be <a href="%s">logged in</a> to post a comment.' ),
-				/** This filter is documented in wp-includes/link-template.php */
+				/** This filter is documented in includes/link-template.php */
 				wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ), $post_id ) )
 			)
 		),
@@ -2559,7 +2559,7 @@ function comment_form( $args = array(), $post = null ) {
 				__( 'Logged in as %1$s. <a href="%2$s">Edit your profile</a>. <a href="%3$s">Log out?</a>' ),
 				$user_identity,
 				get_edit_user_link(),
-				/** This filter is documented in wp-includes/link-template.php */
+				/** This filter is documented in includes/link-template.php */
 				wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ), $post_id ) )
 			),
 			$required_text

@@ -139,7 +139,7 @@ class WP_REST_Menus_Controller extends WP_REST_Terms_Controller {
 			$response->add_links( $this->prepare_links( $term ) );
 		}
 
-		/** This action is documented in wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php */
+		/** This action is documented in includes/rest-api/endpoints/class-wp-rest-terms-controller.php */
 		return apply_filters( "rest_prepare_{$this->taxonomy}", $response, $term, $request );
 	}
 
@@ -236,7 +236,7 @@ class WP_REST_Menus_Controller extends WP_REST_Terms_Controller {
 
 		$term = $this->get_term( $term );
 
-		/** This action is documented in wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php */
+		/** This action is documented in includes/rest-api/endpoints/class-wp-rest-terms-controller.php */
 		do_action( "rest_insert_{$this->taxonomy}", $term, $request, true );
 
 		$schema = $this->get_item_schema();
@@ -264,7 +264,7 @@ class WP_REST_Menus_Controller extends WP_REST_Terms_Controller {
 
 		$request->set_param( 'context', 'view' );
 
-		/** This action is documented in wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php */
+		/** This action is documented in includes/rest-api/endpoints/class-wp-rest-terms-controller.php */
 		do_action( "rest_after_insert_{$this->taxonomy}", $term, $request, true );
 
 		$response = $this->prepare_item_for_response( $term, $request );
@@ -320,7 +320,7 @@ class WP_REST_Menus_Controller extends WP_REST_Terms_Controller {
 
 		$term = get_term( $term->term_id, $this->taxonomy );
 
-		/** This action is documented in wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php */
+		/** This action is documented in includes/rest-api/endpoints/class-wp-rest-terms-controller.php */
 		do_action( "rest_insert_{$this->taxonomy}", $term, $request, false );
 
 		$schema = $this->get_item_schema();
@@ -348,7 +348,7 @@ class WP_REST_Menus_Controller extends WP_REST_Terms_Controller {
 
 		$request->set_param( 'context', 'view' );
 
-		/** This action is documented in wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php */
+		/** This action is documented in includes/rest-api/endpoints/class-wp-rest-terms-controller.php */
 		do_action( "rest_after_insert_{$this->taxonomy}", $term, $request, false );
 
 		$response = $this->prepare_item_for_response( $term, $request );
@@ -394,7 +394,7 @@ class WP_REST_Menus_Controller extends WP_REST_Terms_Controller {
 			)
 		);
 
-		/** This action is documented in wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php */
+		/** This action is documented in includes/rest-api/endpoints/class-wp-rest-terms-controller.php */
 		do_action( "rest_delete_{$this->taxonomy}", $term, $response, $request );
 
 		return $response;
@@ -446,7 +446,7 @@ class WP_REST_Menus_Controller extends WP_REST_Terms_Controller {
 
 		$update = update_option( 'nav_menu_options', $nav_menu_option );
 
-		/** This action is documented in wp-includes/nav-menu.php */
+		/** This action is documented in includes/nav-menu.php */
 		do_action( 'wp_update_nav_menu', $menu_id );
 
 		return $update;

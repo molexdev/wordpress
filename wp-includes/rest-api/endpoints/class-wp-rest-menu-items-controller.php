@@ -233,7 +233,7 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 			return $nav_menu_item;
 		}
 
-		/** This action is documented in wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php */
+		/** This action is documented in includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php */
 		do_action( 'rest_insert_nav_menu_item', $nav_menu_item, $request, false );
 
 		$schema = $this->get_item_schema();
@@ -256,7 +256,7 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 
 		$request->set_param( 'context', 'edit' );
 
-		/** This action is documented in wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php */
+		/** This action is documented in includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php */
 		do_action( 'rest_after_insert_nav_menu_item', $nav_menu_item, $request, false );
 
 		wp_after_insert_post( $post, true, $post_before );
@@ -511,7 +511,7 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 		if ( rest_is_field_included( 'title.rendered', $fields ) ) {
 			add_filter( 'protected_title_format', array( $this, 'protected_title_format' ) );
 
-			/** This filter is documented in wp-includes/post-template.php */
+			/** This filter is documented in includes/post-template.php */
 			$title = apply_filters( 'the_title', $menu_item->title, $menu_item->ID );
 
 			$data['title']['rendered'] = $title;

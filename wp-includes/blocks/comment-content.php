@@ -31,7 +31,7 @@ function render_block_core_comment_content( $attributes, $content, $block ) {
 		return '';
 	}
 
-	/** This filter is documented in wp-includes/comment-template.php */
+	/** This filter is documented in includes/comment-template.php */
 	$comment_text = apply_filters( 'comment_text', $comment_text, $comment, $args );
 
 	$moderation_note = '';

@@ -26,7 +26,7 @@
 	</div>
 
 	<?php
-	/** This filter is documented in wp-includes/theme-compat/embed-content.php */
+	/** This filter is documented in includes/theme-compat/embed-content.php */
 	do_action( 'embed_content' );
 	?>
 

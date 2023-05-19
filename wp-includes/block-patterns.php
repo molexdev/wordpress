@@ -241,7 +241,7 @@ function _load_remote_block_patterns( $deprecated = null ) {
 function _load_remote_featured_patterns() {
 	$supports_core_patterns = get_theme_support( 'core-block-patterns' );
 
-	/** This filter is documented in wp-includes/block-patterns.php */
+	/** This filter is documented in includes/block-patterns.php */
 	$should_load_remote = apply_filters( 'should_load_remote_block_patterns', true );
 
 	if ( ! $should_load_remote || ! $supports_core_patterns ) {
@@ -278,7 +278,7 @@ function _load_remote_featured_patterns() {
  * @access private
  */
 function _register_remote_theme_patterns() {
-	/** This filter is documented in wp-includes/block-patterns.php */
+	/** This filter is documented in includes/block-patterns.php */
 	if ( ! apply_filters( 'should_load_remote_block_patterns', true ) ) {
 		return;
 	}

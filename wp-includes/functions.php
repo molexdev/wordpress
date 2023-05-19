@@ -2682,7 +2682,7 @@ function wp_unique_filename( $dir, $filename, $unique_filename_callback = null )
 		 * when regenerated. If yes, ensure the new file name will be unique and will produce unique sub-sizes.
 		 */
 		if ( $is_image ) {
-			/** This filter is documented in wp-includes/class-wp-image-editor.php */
+			/** This filter is documented in includes/class-wp-image-editor.php */
 			$output_formats = apply_filters( 'image_editor_output_format', array(), $_dir . $filename, $mime_type );
 			$alt_types      = array();
 

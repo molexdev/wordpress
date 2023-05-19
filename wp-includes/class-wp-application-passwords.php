@@ -374,7 +374,7 @@ class WP_Application_Passwords {
 			}
 
 			foreach ( $passwords as $item ) {
-				/** This action is documented in wp-includes/class-wp-application-passwords.php */
+				/** This action is documented in includes/class-wp-application-passwords.php */
 				do_action( 'wp_delete_application_password', $user_id, $item );
 			}
 

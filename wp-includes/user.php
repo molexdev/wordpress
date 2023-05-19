@@ -247,7 +247,7 @@ function wp_authenticate_email_password( $user, $email, $password ) {
 		);
 	}
 
-	/** This filter is documented in wp-includes/user.php */
+	/** This filter is documented in includes/user.php */
 	$user = apply_filters( 'wp_authenticate_user', $user, $password );
 
 	if ( is_wp_error( $user ) ) {
@@ -427,7 +427,7 @@ function wp_authenticate_application_password( $input_user, $username, $password
 		do_action( 'wp_authenticate_application_password_errors', $error, $user, $item, $password );
 
 		if ( is_wp_error( $error ) && $error->has_errors() ) {
-			/** This action is documented in wp-includes/user.php */
+			/** This action is documented in includes/user.php */
 			do_action( 'application_password_failed_authentication', $error );
 
 			return $error;
@@ -453,7 +453,7 @@ function wp_authenticate_application_password( $input_user, $username, $password
 		__( 'The provided password is an invalid application password.' )
 	);
 
-	/** This action is documented in wp-includes/user.php */
+	/** This action is documented in includes/user.php */
 	do_action( 'application_password_failed_authentication', $error );
 
 	return $error;
@@ -1340,7 +1340,7 @@ function count_users( $strategy = 'time', $site_id = null ) {
  *
  * @since MU (3.0.0)
  * @since 4.8.0 The `$network_id` parameter has been added.
- * @since 6.0.0 Moved to wp-includes/user.php.
+ * @since 6.0.0 Moved to includes/user.php.
  *
  * @param int|null $network_id ID of the network. Defaults to the current network.
  * @return int Number of active users on the network.
@@ -1383,7 +1383,7 @@ function wp_maybe_update_user_counts( $network_id = null ) {
 	}
 
 	$is_small_network = ! wp_is_large_user_count( $network_id );
-	/** This filter is documented in wp-includes/ms-functions.php */
+	/** This filter is documented in includes/ms-functions.php */
 	if ( ! apply_filters( 'enable_live_network_counts', $is_small_network, 'users' ) ) {
 		return false;
 	}
@@ -1771,7 +1771,7 @@ function sanitize_user_field( $field, $value, $user_id, $context ) {
 	if ( 'edit' === $context ) {
 		if ( $prefixed ) {
 
-			/** This filter is documented in wp-includes/post.php */
+			/** This filter is documented in includes/post.php */
 			$value = apply_filters( "edit_{$field}", $value, $user_id );
 		} else {
 
@@ -1796,7 +1796,7 @@ function sanitize_user_field( $field, $value, $user_id, $context ) {
 		}
 	} elseif ( 'db' === $context ) {
 		if ( $prefixed ) {
-			/** This filter is documented in wp-includes/post.php */
+			/** This filter is documented in includes/post.php */
 			$value = apply_filters( "pre_{$field}", $value );
 		} else {
 
@@ -1816,7 +1816,7 @@ function sanitize_user_field( $field, $value, $user_id, $context ) {
 		// Use display filters by default.
 		if ( $prefixed ) {
 
-			/** This filter is documented in wp-includes/post.php */
+			/** This filter is documented in includes/post.php */
 			$value = apply_filters( "{$field}", $value, $user_id, $context );
 		} else {
 
@@ -2723,7 +2723,7 @@ All at ###SITENAME###
 			// Here we calculate the expiration length of the current auth cookie and compare it to the default expiration.
 			// If it's greater than this, then we know the user checked 'Remember Me' when they logged in.
 			$logged_in_cookie = wp_parse_auth_cookie( '', 'logged_in' );
-			/** This filter is documented in wp-includes/pluggable.php */
+			/** This filter is documented in includes/pluggable.php */
 			$default_cookie_life = apply_filters( 'auth_cookie_expiration', ( 2 * DAY_IN_SECONDS ), $user_id, false );
 			$remember            = false;
 			if ( false !== $logged_in_cookie && ( $logged_in_cookie['expiration'] - time() ) > $default_cookie_life ) {
@@ -3341,7 +3341,7 @@ function register_new_user( $user_login, $user_email ) {
 	} elseif ( username_exists( $sanitized_user_login ) ) {
 		$errors->add( 'username_exists', __( '<strong>Error:</strong> This username is already registered. Please choose another one.' ) );
 	} else {
-		/** This filter is documented in wp-includes/user.php */
+		/** This filter is documented in includes/user.php */
 		$illegal_user_logins = (array) apply_filters( 'illegal_user_logins', array() );
 		if ( in_array( strtolower( $sanitized_user_login ), array_map( 'strtolower', $illegal_user_logins ), true ) ) {
 			$errors->add( 'invalid_username', __( '<strong>Error:</strong> Sorry, that username is not allowed.' ) );

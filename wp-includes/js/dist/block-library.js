@@ -6661,7 +6661,7 @@ function escapeOpeningSquareBrackets(content) {
  * An isolated URL is a URL that sits in its own line, surrounded only by spacing
  * characters.
  *
- * See https://github.com/WordPress/wordpress-develop/blob/5.1.1/src/wp-includes/class-wp-embed.php#L403
+ * See https://github.com/WordPress/wordpress-develop/blob/5.1.1/src/includes/class-wp-embed.php#L403
  *
  * @param {string} content The content of a code block.
  * @return {string} The given content with its ampersands converted into
@@ -15028,9 +15028,9 @@ function WpEmbedPreview(_ref) {
      * window.postMessage:
      * https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
      * WordPress core embed-template on load:
-     * https://github.com/WordPress/WordPress/blob/HEAD/wp-includes/js/wp-embed-template.js#L143
+     * https://github.com/WordPress/WordPress/blob/HEAD/includes/js/wp-embed-template.js#L143
      * WordPress core embed-template on resize:
-     * https://github.com/WordPress/WordPress/blob/HEAD/wp-includes/js/wp-embed-template.js#L187
+     * https://github.com/WordPress/WordPress/blob/HEAD/includes/js/wp-embed-template.js#L187
      *
      * @param {MessageEvent} event Message event.
      */
@@ -31323,7 +31323,7 @@ function mapMenuItemsToBlocks(menuItems) {
 /**
  * A WP nav_menu_item object.
  * For more documentation on the individual fields present on a menu item please see:
- * https://core.trac.wordpress.org/browser/tags/5.7.1/src/wp-includes/nav-menu.php#L789
+ * https://core.trac.wordpress.org/browser/tags/5.7.1/src/includes/nav-menu.php#L789
  *
  * @typedef WPNavMenuItem
  *

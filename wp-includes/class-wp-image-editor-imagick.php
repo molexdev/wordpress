@@ -798,7 +798,7 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 
 		return array(
 			'path'      => $filename,
-			/** This filter is documented in wp-includes/class-wp-image-editor-gd.php */
+			/** This filter is documented in includes/class-wp-image-editor-gd.php */
 			'file'      => wp_basename( apply_filters( 'image_make_intermediate_size', $filename ) ),
 			'width'     => $this->size['width'],
 			'height'    => $this->size['height'],

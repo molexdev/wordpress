@@ -274,14 +274,14 @@ class WP_Http {
 
 		if ( empty( $url ) || empty( $parsed_url['scheme'] ) ) {
 			$response = new WP_Error( 'http_request_failed', __( 'A valid URL was not provided.' ) );
-			/** This action is documented in wp-includes/class-wp-http.php */
+			/** This action is documented in includes/class-wp-http.php */
 			do_action( 'http_api_debug', $response, 'response', 'WpOrg\Requests\Requests', $parsed_args, $url );
 			return $response;
 		}
 
 		if ( $this->block_request( $url ) ) {
 			$response = new WP_Error( 'http_request_not_executed', __( 'User has blocked requests through HTTP.' ) );
-			/** This action is documented in wp-includes/class-wp-http.php */
+			/** This action is documented in includes/class-wp-http.php */
 			do_action( 'http_api_debug', $response, 'response', 'WpOrg\Requests\Requests', $parsed_args, $url );
 			return $response;
 		}
@@ -298,7 +298,7 @@ class WP_Http {
 			$parsed_args['blocking'] = true;
 			if ( ! wp_is_writable( dirname( $parsed_args['filename'] ) ) ) {
 				$response = new WP_Error( 'http_request_failed', __( 'Destination directory for file streaming does not exist or is not writable.' ) );
-				/** This action is documented in wp-includes/class-wp-http.php */
+				/** This action is documented in includes/class-wp-http.php */
 				do_action( 'http_api_debug', $response, 'response', 'WpOrg\Requests\Requests', $parsed_args, $url );
 				return $response;
 			}
@@ -587,14 +587,14 @@ class WP_Http {
 
 		$response = $transports[ $class ]->request( $url, $args );
 
-		/** This action is documented in wp-includes/class-wp-http.php */
+		/** This action is documented in includes/class-wp-http.php */
 		do_action( 'http_api_debug', $response, 'response', $class, $args, $url );
 
 		if ( is_wp_error( $response ) ) {
 			return $response;
 		}
 
-		/** This filter is documented in wp-includes/class-wp-http.php */
+		/** This filter is documented in includes/class-wp-http.php */
 		return apply_filters( 'http_response', $response, $args, $url );
 	}
 

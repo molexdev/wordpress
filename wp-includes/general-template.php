@@ -396,7 +396,7 @@ function wp_loginout( $redirect = '', $display = true ) {
 		 */
 		echo apply_filters( 'loginout', $link );
 	} else {
-		/** This filter is documented in wp-includes/general-template.php */
+		/** This filter is documented in includes/general-template.php */
 		return apply_filters( 'loginout', $link );
 	}
 }
@@ -2178,7 +2178,7 @@ function wp_get_archives( $args = '' ) {
 				if ( '0000-00-00 00:00:00' !== $result->post_date ) {
 					$url = get_permalink( $result );
 					if ( $result->post_title ) {
-						/** This filter is documented in wp-includes/post-template.php */
+						/** This filter is documented in includes/post-template.php */
 						$text = strip_tags( apply_filters( 'the_title', $result->post_title, $result->ID ) );
 					} else {
 						$text = $result->ID;
@@ -2236,7 +2236,7 @@ function get_calendar( $initial = true, $display = true ) {
 	$cache = wp_cache_get( 'get_calendar', 'calendar' );
 
 	if ( $cache && is_array( $cache ) && isset( $cache[ $key ] ) ) {
-		/** This filter is documented in wp-includes/general-template.php */
+		/** This filter is documented in includes/general-template.php */
 		$output = apply_filters( 'get_calendar', $cache[ $key ] );
 
 		if ( $display ) {
@@ -2447,7 +2447,7 @@ function get_calendar( $initial = true, $display = true ) {
 		echo apply_filters( 'get_calendar', $calendar_output );
 		return;
 	}
-	/** This filter is documented in wp-includes/general-template.php */
+	/** This filter is documented in includes/general-template.php */
 	return apply_filters( 'get_calendar', $calendar_output );
 }
 
@@ -3170,7 +3170,7 @@ function feed_links_extra( $args = array() ) {
 		$id   = 0;
 		$post = get_post( $id );
 
-		/** This filter is documented in wp-includes/general-template.php */
+		/** This filter is documented in includes/general-template.php */
 		$show_comments_feed = apply_filters( 'feed_links_show_comments_feed', true );
 
 		/**
@@ -4598,7 +4598,7 @@ function paginate_links( $args = '' ) {
 
 				$page_links[] = sprintf(
 					'<a class="page-numbers" href="%s">%s</a>',
-					/** This filter is documented in wp-includes/general-template.php */
+					/** This filter is documented in includes/general-template.php */
 					esc_url( apply_filters( 'paginate_links', $link ) ),
 					$args['before_page_number'] . number_format_i18n( $n ) . $args['after_page_number']
 				);
@@ -4622,7 +4622,7 @@ function paginate_links( $args = '' ) {
 
 		$page_links[] = sprintf(
 			'<a class="next page-numbers" href="%s">%s</a>',
-			/** This filter is documented in wp-includes/general-template.php */
+			/** This filter is documented in includes/general-template.php */
 			esc_url( apply_filters( 'paginate_links', $link ) ),
 			$args['next_text']
 		);
@@ -4910,7 +4910,7 @@ function wp_admin_css( $file = 'wp-admin', $force_echo = false ) {
 			esc_url( wp_admin_css_uri( "$file-rtl" ) )
 		);
 
-		/** This filter is documented in wp-includes/general-template.php */
+		/** This filter is documented in includes/general-template.php */
 		echo apply_filters( 'wp_admin_css', $rtl_stylesheet_link, "$file-rtl" );
 	}
 }

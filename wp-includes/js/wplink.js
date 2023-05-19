@@ -1,5 +1,5 @@
 /**
- * @output wp-includes/js/wplink.js
+ * @output includes/js/wplink.js
  */
 
  /* global wpLink */

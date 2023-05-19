@@ -113,10 +113,10 @@ class WP_Http_Curl {
 		$is_local   = isset( $parsed_args['local'] ) && $parsed_args['local'];
 		$ssl_verify = isset( $parsed_args['sslverify'] ) && $parsed_args['sslverify'];
 		if ( $is_local ) {
-			/** This filter is documented in wp-includes/class-wp-http-streams.php */
+			/** This filter is documented in includes/class-wp-http-streams.php */
 			$ssl_verify = apply_filters( 'https_local_ssl_verify', $ssl_verify, $url );
 		} elseif ( ! $is_local ) {
-			/** This filter is documented in wp-includes/class-wp-http.php */
+			/** This filter is documented in includes/class-wp-http.php */
 			$ssl_verify = apply_filters( 'https_ssl_verify', $ssl_verify, $url );
 		}
 

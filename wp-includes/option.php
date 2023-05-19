@@ -210,7 +210,7 @@ function get_option( $option, $default_value = false ) {
 					$notoptions[ $option ] = true;
 					wp_cache_set( 'notoptions', $notoptions, 'options' );
 
-					/** This filter is documented in wp-includes/option.php */
+					/** This filter is documented in includes/option.php */
 					return apply_filters( "default_option_{$option}", $default_value, $option, $passed_default );
 				}
 			}
@@ -223,7 +223,7 @@ function get_option( $option, $default_value = false ) {
 		if ( is_object( $row ) ) {
 			$value = $row->option_value;
 		} else {
-			/** This filter is documented in wp-includes/option.php */
+			/** This filter is documented in includes/option.php */
 			return apply_filters( "default_option_{$option}", $default_value, $option, $passed_default );
 		}
 	}
@@ -502,7 +502,7 @@ function update_option( $option, $value, $autoload = null ) {
 		return false;
 	}
 
-	/** This filter is documented in wp-includes/option.php */
+	/** This filter is documented in includes/option.php */
 	if ( apply_filters( "default_option_{$option}", false, $option, false ) === $old_value ) {
 		// Default setting for new options is 'yes'.
 		if ( null === $autoload ) {
@@ -658,7 +658,7 @@ function add_option( $option, $value = '', $deprecated = '', $autoload = 'yes' )
 	$notoptions = wp_cache_get( 'notoptions', 'options' );
 
 	if ( ! is_array( $notoptions ) || ! isset( $notoptions[ $option ] ) ) {
-		/** This filter is documented in wp-includes/option.php */
+		/** This filter is documented in includes/option.php */
 		if ( apply_filters( "default_option_{$option}", false, $option, false ) !== get_option( $option ) ) {
 			return false;
 		}
@@ -1481,7 +1481,7 @@ function get_network_option( $network_id, $option, $default_value = false ) {
 	}
 
 	if ( ! is_multisite() ) {
-		/** This filter is documented in wp-includes/option.php */
+		/** This filter is documented in includes/option.php */
 		$default_value = apply_filters( 'default_site_option_' . $option, $default_value, $option, $network_id );
 		$value         = get_option( $option, $default_value );
 	} else {
@@ -1504,7 +1504,7 @@ function get_network_option( $network_id, $option, $default_value = false ) {
 				$notoptions[ $option ] = true;
 				wp_cache_set( $notoptions_key, $notoptions, 'site-options' );
 
-				/** This filter is documented in wp-includes/option.php */
+				/** This filter is documented in includes/option.php */
 				$value = apply_filters( 'default_site_option_' . $option, $default_value, $option, $network_id );
 			}
 		}

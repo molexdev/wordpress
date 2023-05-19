@@ -1279,7 +1279,7 @@ function get_search_comments_feed_link( $search_query = '', $feed = '' ) {
 		$link = add_query_arg( 'withcomments', 1, $link );
 	}
 
-	/** This filter is documented in wp-includes/link-template.php */
+	/** This filter is documented in includes/link-template.php */
 	return apply_filters( 'search_feed_link', $link, $feed, 'comments' );
 }
 
@@ -1313,7 +1313,7 @@ function get_post_type_archive_link( $post_type ) {
 		} else {
 			$link = get_home_url();
 		}
-		/** This filter is documented in wp-includes/link-template.php */
+		/** This filter is documented in includes/link-template.php */
 		return apply_filters( 'post_type_archive_link', $link, $post_type );
 	}
 
@@ -2322,7 +2322,7 @@ function get_adjacent_post_link( $format, $link, $in_same_term = false, $exclude
 			$title = $previous ? __( 'Previous Post' ) : __( 'Next Post' );
 		}
 
-		/** This filter is documented in wp-includes/post-template.php */
+		/** This filter is documented in includes/post-template.php */
 		$title = apply_filters( 'the_title', $title, $post->ID );
 
 		$date = mysql2date( get_option( 'date_format' ), $post->post_date );
@@ -3581,7 +3581,7 @@ function includes_url( $path = '', $scheme = null ) {
 	 * @since 5.8.0 The `$scheme` parameter was added.
 	 *
 	 * @param string      $url    The complete URL to the includes directory including scheme and path.
-	 * @param string      $path   Path relative to the URL to the wp-includes directory. Blank string
+	 * @param string      $path   Path relative to the URL to the includes directory. Blank string
 	 *                            if no path is specified.
 	 * @param string|null $scheme Scheme to give the includes URL context. Accepts
 	 *                            'http', 'https', 'relative', or null. Default null.
@@ -4411,7 +4411,7 @@ function get_avatar_data( $id_or_email, $args = null ) {
 	$args = apply_filters( 'pre_get_avatar_data', $args, $id_or_email );
 
 	if ( isset( $args['url'] ) ) {
-		/** This filter is documented in wp-includes/link-template.php */
+		/** This filter is documented in includes/link-template.php */
 		return apply_filters( 'get_avatar_data', $args, $id_or_email );
 	}
 
@@ -4443,7 +4443,7 @@ function get_avatar_data( $id_or_email, $args = null ) {
 	} elseif ( $id_or_email instanceof WP_Comment ) {
 		if ( ! is_avatar_comment_type( get_comment_type( $id_or_email ) ) ) {
 			$args['url'] = false;
-			/** This filter is documented in wp-includes/link-template.php */
+			/** This filter is documented in includes/link-template.php */
 			return apply_filters( 'get_avatar_data', $args, $id_or_email );
 		}
 

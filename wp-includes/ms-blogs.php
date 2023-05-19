@@ -579,7 +579,7 @@ function switch_to_blog( $new_blog_id, $deprecated = null ) {
 		}
 	}
 
-	/** This filter is documented in wp-includes/ms-blogs.php */
+	/** This filter is documented in includes/ms-blogs.php */
 	do_action( 'switch_blog', $new_blog_id, $prev_blog_id, 'switch' );
 
 	$GLOBALS['switched'] = true;
@@ -613,7 +613,7 @@ function restore_current_blog() {
 	$prev_blog_id = get_current_blog_id();
 
 	if ( $new_blog_id == $prev_blog_id ) {
-		/** This filter is documented in wp-includes/ms-blogs.php */
+		/** This filter is documented in includes/ms-blogs.php */
 		do_action( 'switch_blog', $new_blog_id, $prev_blog_id, 'restore' );
 
 		// If we still have items in the switched stack, consider ourselves still 'switched'.
@@ -670,7 +670,7 @@ function restore_current_blog() {
 		}
 	}
 
-	/** This filter is documented in wp-includes/ms-blogs.php */
+	/** This filter is documented in includes/ms-blogs.php */
 	do_action( 'switch_blog', $new_blog_id, $prev_blog_id, 'restore' );
 
 	// If we still have items in the switched stack, consider ourselves still 'switched'.

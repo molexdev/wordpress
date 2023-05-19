@@ -887,7 +887,7 @@ class WP_REST_Comments_Controller extends WP_REST_Controller {
 
 		$comment = get_comment( $id );
 
-		/** This action is documented in wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php */
+		/** This action is documented in includes/rest-api/endpoints/class-wp-rest-comments-controller.php */
 		do_action( 'rest_insert_comment', $comment, $request, false );
 
 		$schema = $this->get_item_schema();
@@ -908,7 +908,7 @@ class WP_REST_Comments_Controller extends WP_REST_Controller {
 
 		$request->set_param( 'context', 'edit' );
 
-		/** This action is documented in wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php */
+		/** This action is documented in includes/rest-api/endpoints/class-wp-rest-comments-controller.php */
 		do_action( 'rest_after_insert_comment', $comment, $request, false );
 
 		$response = $this->prepare_item_for_response( $comment, $request );
@@ -1088,7 +1088,7 @@ class WP_REST_Comments_Controller extends WP_REST_Controller {
 
 		if ( in_array( 'content', $fields, true ) ) {
 			$data['content'] = array(
-				/** This filter is documented in wp-includes/comment-template.php */
+				/** This filter is documented in includes/comment-template.php */
 				'rendered' => apply_filters( 'comment_text', $comment->comment_content, $comment ),
 				'raw'      => $comment->comment_content,
 			);
@@ -1895,7 +1895,7 @@ class WP_REST_Comments_Controller extends WP_REST_Controller {
 			)
 		);
 
-		/** This filter is documented in wp-includes/comment.php */
+		/** This filter is documented in includes/comment.php */
 		$allow_empty = apply_filters( 'allow_empty_comment', false, $check );
 
 		if ( $allow_empty ) {

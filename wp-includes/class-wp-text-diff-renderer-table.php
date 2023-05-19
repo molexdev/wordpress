@@ -207,7 +207,7 @@ class WP_Text_Diff_Renderer_Table extends Text_Diff_Renderer {
 			if ( $encode ) {
 				$processed_line = htmlspecialchars( $line );
 
-				/** This filter is documented in wp-includes/wp-diff.php */
+				/** This filter is documented in includes/wp-diff.php */
 				$line = apply_filters( 'process_text_diff_html', $processed_line, $line, 'deleted' );
 			}
 			if ( $this->_show_split_view ) {
@@ -232,7 +232,7 @@ class WP_Text_Diff_Renderer_Table extends Text_Diff_Renderer {
 			if ( $encode ) {
 				$processed_line = htmlspecialchars( $line );
 
-				/** This filter is documented in wp-includes/wp-diff.php */
+				/** This filter is documented in includes/wp-diff.php */
 				$line = apply_filters( 'process_text_diff_html', $processed_line, $line, 'unchanged' );
 			}
 			if ( $this->_show_split_view ) {
