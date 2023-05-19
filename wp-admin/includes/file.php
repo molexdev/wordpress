@@ -2147,7 +2147,7 @@ function get_filesystem_method( $args = array(), $context = '', $allow_relaxed_f
 		$context = WP_CONTENT_DIR;
 	}
 
-	// If the directory doesn't exist (wp-content/languages) then use the parent directory as we'll create it.
+	// If the directory doesn't exist (content/languages) then use the parent directory as we'll create it.
 	if ( WP_LANG_DIR === $context && ! is_dir( $context ) ) {
 		$context = dirname( $context );
 	}

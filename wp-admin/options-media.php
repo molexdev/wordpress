@@ -21,7 +21,7 @@ $media_options_help = '<p>' . __( 'You can set maximum sizes for images inserted
 
 if ( ! is_multisite()
 	&& ( get_option( 'upload_url_path' )
-		|| get_option( 'upload_path' ) && 'wp-content/uploads' !== get_option( 'upload_path' ) )
+		|| get_option( 'upload_path' ) && 'content/uploads' !== get_option( 'upload_path' ) )
 ) {
 	$media_options_help .= '<p>' . __( 'Uploading Files allows you to choose the folder and path for storing your uploaded files.' ) . '</p>';
 }
@@ -128,19 +128,19 @@ if ( isset( $GLOBALS['wp_settings']['media']['embeds'] ) ) :
 	<?php
 	/*
 	 * If upload_url_path is not the default (empty),
-	 * or upload_path is not the default ('wp-content/uploads' or empty),
+	 * or upload_path is not the default ('content/uploads' or empty),
 	 * they can be edited, otherwise they're locked.
 	 */
 	if ( get_option( 'upload_url_path' )
-		|| get_option( 'upload_path' ) && 'wp-content/uploads' !== get_option( 'upload_path' ) ) :
+		|| get_option( 'upload_path' ) && 'content/uploads' !== get_option( 'upload_path' ) ) :
 		?>
 <tr>
 <th scope="row"><label for="upload_path"><?php _e( 'Store uploads in this folder' ); ?></label></th>
 <td><input name="upload_path" type="text" id="upload_path" value="<?php echo esc_attr( get_option( 'upload_path' ) ); ?>" class="regular-text code" />
 <p class="description">
 		<?php
-		/* translators: %s: wp-content/uploads */
-		printf( __( 'Default is %s' ), '<code>wp-content/uploads</code>' );
+		/* translators: %s: content/uploads */
+		printf( __( 'Default is %s' ), '<code>content/uploads</code>' );
 		?>
 </p>
 </td>

@@ -91,7 +91,7 @@ final class WP_Theme implements ArrayAccess {
 	);
 
 	/**
-	 * Absolute path to the theme root, usually wp-content/themes
+	 * Absolute path to the theme root, usually content/themes
 	 *
 	 * @since 3.4.0
 	 * @var string
@@ -171,7 +171,7 @@ final class WP_Theme implements ArrayAccess {
 	private $parent;
 
 	/**
-	 * URL to the theme root, usually an absolute URL to wp-content/themes
+	 * URL to the theme root, usually an absolute URL to content/themes
 	 *
 	 * @since 3.4.0
 	 * @var string
@@ -322,7 +322,7 @@ final class WP_Theme implements ArrayAccess {
 		} else {
 			$this->headers = get_file_data( $this->theme_root . '/' . $theme_file, self::$file_headers, 'theme' );
 			// Default themes always trump their pretenders.
-			// Properly identify default themes that are inside a directory within wp-content/themes.
+			// Properly identify default themes that are inside a directory within content/themes.
 			$default_theme_slug = array_search( $this->headers['Name'], self::$default_themes, true );
 			if ( $default_theme_slug ) {
 				if ( basename( $this->stylesheet ) != $default_theme_slug ) {
@@ -394,7 +394,7 @@ final class WP_Theme implements ArrayAccess {
 		// If we got our data from cache, we can assume that 'template' is pointing to the right place.
 		if ( ! is_array( $cache ) && $this->template != $this->stylesheet && ! file_exists( $this->theme_root . '/' . $this->template . '/index.php' ) ) {
 			// If we're in a directory of themes inside /themes, look for the parent nearby.
-			// wp-content/themes/directory-of-themes/*
+			// content/themes/directory-of-themes/*
 			$parent_dir  = dirname( $this->stylesheet );
 			$directories = search_theme_directories();
 
@@ -1156,7 +1156,7 @@ final class WP_Theme implements ArrayAccess {
 	/**
 	 * Returns the absolute path to the directory of the theme root.
 	 *
-	 * This is typically the absolute path to wp-content/themes.
+	 * This is typically the absolute path to content/themes.
 	 *
 	 * @since 3.4.0
 	 *
@@ -1169,7 +1169,7 @@ final class WP_Theme implements ArrayAccess {
 	/**
 	 * Returns the URL to the directory of the theme root.
 	 *
-	 * This is typically the absolute URL to wp-content/themes. This forms the basis
+	 * This is typically the absolute URL to content/themes. This forms the basis
 	 * for all other URLs returned by WP_Theme, so we pass it to the public function
 	 * get_theme_root_uri() and allow it to run the {@see 'theme_root_uri'} filter.
 	 *

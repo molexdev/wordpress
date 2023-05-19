@@ -185,11 +185,11 @@ if ( ! is_multisite() ) {
 
 	/*
 	 * If upload_url_path is not the default (empty),
-	 * or upload_path is not the default ('wp-content/uploads' or empty),
+	 * or upload_path is not the default ('content/uploads' or empty),
 	 * they can be edited, otherwise they're locked.
 	 */
 	if ( get_option( 'upload_url_path' )
-		|| get_option( 'upload_path' ) && 'wp-content/uploads' !== get_option( 'upload_path' )
+		|| get_option( 'upload_path' ) && 'content/uploads' !== get_option( 'upload_path' )
 	) {
 		$allowed_options['media'][] = 'upload_path';
 		$allowed_options['media'][] = 'upload_url_path';

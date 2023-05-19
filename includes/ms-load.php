@@ -26,7 +26,7 @@ function is_subdomain_install() {
 /**
  * Returns array of network plugin files to be included in global scope.
  *
- * The default directory is wp-content/plugins. To change the default directory
+ * The default directory is content/plugins. To change the default directory
  * manually, define `WP_PLUGIN_DIR` and `WP_PLUGIN_URL` in `wp-config.php`.
  *
  * @access private
@@ -64,7 +64,7 @@ function wp_get_active_network_plugins() {
  * Dies with a default message if the blog does not pass the check.
  *
  * To change the default message when a blog does not pass the check,
- * use the wp-content/blog-deleted.php, blog-inactive.php and
+ * use the content/blog-deleted.php, blog-inactive.php and
  * blog-suspended.php drop-ins.
  *
  * @since 3.0.0

@@ -2689,7 +2689,7 @@ function get_subdirectory_reserved_names() {
 		'files',
 		'feed',
 		'wp-admin',
-		'wp-content',
+		'content',
 		'includes',
 		'wp-json',
 		'embed',
@@ -2699,7 +2699,7 @@ function get_subdirectory_reserved_names() {
 	 * Filters reserved site names on a sub-directory Multisite installation.
 	 *
 	 * @since 3.0.0
-	 * @since 4.4.0 'wp-admin', 'wp-content', 'includes', 'wp-json', and 'embed' were added
+	 * @since 4.4.0 'wp-admin', 'content', 'includes', 'wp-json', and 'embed' were added
 	 *              to the reserved names list.
 	 *
 	 * @param string[] $subdirectory_reserved_names Array of reserved names.

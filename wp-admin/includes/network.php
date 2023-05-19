@@ -259,8 +259,8 @@ function network_step1( $errors = false ) {
 		<?php
 	endif;
 
-	if ( WP_CONTENT_DIR !== ABSPATH . 'wp-content' && ( allow_subdirectory_install() || ! allow_subdomain_install() ) ) {
-		echo '<div class="error inline"><p><strong>' . __( 'Warning:' ) . '</strong> ' . __( 'Subdirectory networks may not be fully compatible with custom wp-content directories.' ) . '</p></div>';
+	if ( WP_CONTENT_DIR !== ABSPATH . 'content' && ( allow_subdirectory_install() || ! allow_subdomain_install() ) ) {
+		echo '<div class="error inline"><p><strong>' . __( 'Warning:' ) . '</strong> ' . __( 'Subdirectory networks may not be fully compatible with custom content directories.' ) . '</p></div>';
 	}
 
 	$is_www = ( 0 === strpos( $hostname, 'www.' ) );
@@ -621,8 +621,8 @@ define( 'BLOG_ID_CURRENT_SITE', 1 );
 				'<code>' . $home_path . '</code>'
 			);
 		echo '</p>';
-		if ( ! $subdomain_install && WP_CONTENT_DIR !== ABSPATH . 'wp-content' ) {
-			echo '<p><strong>' . __( 'Warning:' ) . ' ' . __( 'Subdirectory networks may not be fully compatible with custom wp-content directories.' ) . '</strong></p>';
+		if ( ! $subdomain_install && WP_CONTENT_DIR !== ABSPATH . 'content' ) {
+			echo '<p><strong>' . __( 'Warning:' ) . ' ' . __( 'Subdirectory networks may not be fully compatible with custom content directories.' ) . '</strong></p>';
 		}
 		?>
 			<p class="configuration-rules-label"><label for="network-webconfig-rules">
@@ -683,8 +683,8 @@ EOF;
 			'<code>' . $home_path . '</code>'
 		);
 		echo '</p>';
-		if ( ! $subdomain_install && WP_CONTENT_DIR !== ABSPATH . 'wp-content' ) {
-			echo '<p><strong>' . __( 'Warning:' ) . ' ' . __( 'Subdirectory networks may not be fully compatible with custom wp-content directories.' ) . '</strong></p>';
+		if ( ! $subdomain_install && WP_CONTENT_DIR !== ABSPATH . 'content' ) {
+			echo '<p><strong>' . __( 'Warning:' ) . ' ' . __( 'Subdirectory networks may not be fully compatible with custom content directories.' ) . '</strong></p>';
 		}
 		?>
 			<p class="configuration-rules-label"><label for="network-htaccess-rules">

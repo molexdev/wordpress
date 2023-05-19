@@ -74,7 +74,7 @@ function wp_initial_constants() {
 	}
 
 	if ( ! defined( 'WP_CONTENT_DIR' ) ) {
-		define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' ); // No trailing slash, full paths only - WP_CONTENT_URL is defined further down.
+		define( 'WP_CONTENT_DIR', ABSPATH . 'content' ); // No trailing slash, full paths only - WP_CONTENT_URL is defined further down.
 	}
 
 	// Add define( 'WP_DEBUG', true ); to wp-config.php to enable display of notices during development.
@@ -92,7 +92,7 @@ function wp_initial_constants() {
 		define( 'WP_DEBUG_DISPLAY', true );
 	}
 
-	// Add define( 'WP_DEBUG_LOG', true ); to enable error logging to wp-content/debug.log.
+	// Add define( 'WP_DEBUG_LOG', true ); to enable error logging to content/debug.log.
 	if ( ! defined( 'WP_DEBUG_LOG' ) ) {
 		define( 'WP_DEBUG_LOG', false );
 	}
@@ -158,7 +158,7 @@ function wp_initial_constants() {
  */
 function wp_plugin_directory_constants() {
 	if ( ! defined( 'WP_CONTENT_URL' ) ) {
-		define( 'WP_CONTENT_URL', get_option( 'siteurl' ) . '/wp-content' ); // Full URL - WP_CONTENT_DIR is defined further up.
+		define( 'WP_CONTENT_URL', get_option( 'siteurl' ) . '/content' ); // Full URL - WP_CONTENT_DIR is defined further up.
 	}
 
 	/**
@@ -186,7 +186,7 @@ function wp_plugin_directory_constants() {
 	 * @deprecated
 	 */
 	if ( ! defined( 'PLUGINDIR' ) ) {
-		define( 'PLUGINDIR', 'wp-content/plugins' ); // Relative to ABSPATH. For back compat.
+		define( 'PLUGINDIR', 'content/plugins' ); // Relative to ABSPATH. For back compat.
 	}
 
 	/**
@@ -214,7 +214,7 @@ function wp_plugin_directory_constants() {
 	 * @deprecated
 	 */
 	if ( ! defined( 'MUPLUGINDIR' ) ) {
-		define( 'MUPLUGINDIR', 'wp-content/mu-plugins' ); // Relative to ABSPATH. For back compat.
+		define( 'MUPLUGINDIR', 'content/mu-plugins' ); // Relative to ABSPATH. For back compat.
 	}
 }
 

@@ -161,7 +161,7 @@ function wp_check_php_mysql_versions() {
 	if ( ! function_exists( 'mysqli_connect' ) && ! function_exists( 'mysql_connect' )
 		// This runs before default constants are defined, so we can't assume WP_CONTENT_DIR is set yet.
 		&& ( defined( 'WP_CONTENT_DIR' ) && ! file_exists( WP_CONTENT_DIR . '/db.php' )
-			|| ! file_exists( ABSPATH . 'wp-content/db.php' ) )
+			|| ! file_exists( ABSPATH . 'content/db.php' ) )
 	) {
 		require_once ABSPATH . WPINC . '/functions.php';
 		wp_load_translations_early();
@@ -278,7 +278,7 @@ function wp_favicon_request() {
  * Die with a maintenance message when conditions are met.
  *
  * The default message can be replaced by using a drop-in (maintenance.php in
- * the wp-content directory).
+ * the content directory).
  *
  * @since 3.0.0
  * @access private
@@ -432,7 +432,7 @@ function timer_stop( $display = 0, $precision = 3 ) {
  * from changing the global configuration setting. Defining `WP_DEBUG_DISPLAY`
  * as false will force errors to be hidden.
  *
- * When `WP_DEBUG_LOG` is true, errors will be logged to `wp-content/debug.log`.
+ * When `WP_DEBUG_LOG` is true, errors will be logged to `content/debug.log`.
  * When `WP_DEBUG_LOG` is a valid path, errors will be logged to the specified file.
  *
  * Errors are never displayed for XML-RPC, REST, `ms-files.php`, and Ajax requests.
@@ -535,7 +535,7 @@ function wp_set_lang_dir() {
 			define( 'WP_LANG_DIR', WP_CONTENT_DIR . '/languages' );
 			if ( ! defined( 'LANGDIR' ) ) {
 				// Old static relative path maintained for limited backward compatibility - won't work in some cases.
-				define( 'LANGDIR', 'wp-content/languages' );
+				define( 'LANGDIR', 'content/languages' );
 			}
 		} else {
 			/**
@@ -676,7 +676,7 @@ function wp_using_ext_object_cache( $using = null ) {
 /**
  * Start the WordPress object cache.
  *
- * If an object-cache.php file exists in the wp-content directory,
+ * If an object-cache.php file exists in the content directory,
  * it uses that drop-in as an external object cache.
  *
  * @since 3.0.0
@@ -810,7 +810,7 @@ function wp_not_installed() {
 /**
  * Retrieve an array of must-use plugin files.
  *
- * The default directory is wp-content/mu-plugins. To change the default
+ * The default directory is content/mu-plugins. To change the default
  * directory manually, define `WPMU_PLUGIN_DIR` and `WPMU_PLUGIN_URL`
  * in wp-config.php.
  *
@@ -844,7 +844,7 @@ function wp_get_mu_plugins() {
  *
  * While upgrading or installing WordPress, no plugins are returned.
  *
- * The default directory is `wp-content/plugins`. To change the default
+ * The default directory is `content/plugins`. To change the default
  * directory manually, define `WP_PLUGIN_DIR` and `WP_PLUGIN_URL`
  * in `wp-config.php`.
  *
@@ -1401,8 +1401,8 @@ function wp_load_translations_early() {
 			$locations[] = WP_CONTENT_DIR . '/languages';
 		}
 
-		if ( @is_dir( ABSPATH . 'wp-content/languages' ) ) {
-			$locations[] = ABSPATH . 'wp-content/languages';
+		if ( @is_dir( ABSPATH . 'content/languages' ) ) {
+			$locations[] = ABSPATH . 'content/languages';
 		}
 
 		if ( @is_dir( ABSPATH . WPINC . '/languages' ) ) {

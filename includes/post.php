@@ -6499,7 +6499,7 @@ function wp_delete_attachment_files( $post_id, $meta, $backup_sizes, $file ) {
  *
  *     @type int    $width      The width of the attachment.
  *     @type int    $height     The height of the attachment.
- *     @type string $file       The file path relative to `wp-content/uploads`.
+ *     @type string $file       The file path relative to `content/uploads`.
  *     @type array  $sizes      Keys are size slugs, each value is an array containing
  *                              'file', 'width', 'height', and 'mime-type'.
  *     @type array  $image_meta Image metadata.
@@ -6610,7 +6610,7 @@ function wp_get_attachment_url( $attachment_id = 0 ) {
 			if ( 0 === strpos( $file, $uploads['basedir'] ) ) {
 				// Replace file location with url location.
 				$url = str_replace( $uploads['basedir'], $uploads['baseurl'], $file );
-			} elseif ( false !== strpos( $file, 'wp-content/uploads' ) ) {
+			} elseif ( false !== strpos( $file, 'content/uploads' ) ) {
 				// Get the directory name relative to the basedir (back compat for pre-2.7 uploads).
 				$url = trailingslashit( $uploads['baseurl'] . '/' . _wp_get_attachment_relative_path( $file ) ) . wp_basename( $file );
 			} else {

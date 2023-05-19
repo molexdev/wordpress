@@ -1159,9 +1159,9 @@ function _wp_get_attachment_relative_path( $file ) {
 		return '';
 	}
 
-	if ( false !== strpos( $dirname, 'wp-content/uploads' ) ) {
+	if ( false !== strpos( $dirname, 'content/uploads' ) ) {
 		// Get the directory name relative to the upload directory (back compat for pre-2.7 uploads).
-		$dirname = substr( $dirname, strpos( $dirname, 'wp-content/uploads' ) + 18 );
+		$dirname = substr( $dirname, strpos( $dirname, 'content/uploads' ) + 18 );
 		$dirname = ltrim( $dirname, '/' );
 	}
 
@@ -4108,7 +4108,7 @@ function wp_plupload_default_settings() {
  *     @type int    $uploadedTo            Parent post to which the attachment was uploaded.
  *     @type string $uploadedToLink        URL to the edit page of the parent post of the attachment.
  *     @type string $uploadedToTitle       Post title of the parent of the attachment.
- *     @type string $url                   Direct URL to the attachment file (from wp-content).
+ *     @type string $url                   Direct URL to the attachment file (from content).
  *     @type int    $width                 If the attachment is an image, represents the width of the image in pixels.
  * }
  *

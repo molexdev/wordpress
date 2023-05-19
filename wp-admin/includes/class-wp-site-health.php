@@ -1268,7 +1268,7 @@ class WP_Site_Health {
 					sprintf(
 						/* translators: 1: The name of the drop-in. 2: The name of the database engine. */
 						__( 'You are using a %1$s drop-in which might mean that a %2$s database is not being used.' ),
-						'<code>wp-content/db.php</code>',
+						'<code>content/db.php</code>',
 						( $this->is_mariadb ? 'MariaDB' : 'MySQL' )
 					),
 					array(

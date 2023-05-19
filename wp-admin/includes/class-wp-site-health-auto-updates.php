@@ -358,7 +358,7 @@ class WP_Site_Health_Auto_Updates {
 
 		$unwritable_files = array();
 		foreach ( array_keys( $checksums ) as $file ) {
-			if ( 'wp-content' === substr( $file, 0, 10 ) ) {
+			if ( 'content' === substr( $file, 0, 7 ) ) {
 				continue;
 			}
 			if ( ! file_exists( ABSPATH . $file ) ) {

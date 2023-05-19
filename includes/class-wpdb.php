@@ -44,7 +44,7 @@ define( 'ARRAY_N', 'ARRAY_N' );
  * access to the WordPress database.
  *
  * It is possible to replace this class with your own by setting the $wpdb global variable
- * in wp-content/db.php file to your class. The wpdb class will still be included, so you can
+ * in content/db.php file to your class. The wpdb class will still be included, so you can
  * extend it or simply use your own.
  *
  * @link https://developer.wordpress.org/reference/classes/wpdb/

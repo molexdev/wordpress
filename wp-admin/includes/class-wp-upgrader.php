@@ -542,7 +542,7 @@ class WP_Upgrader {
 		/*
 		 * Protection against deleting files in any important base directories.
 		 * Theme_Upgrader & Plugin_Upgrader also trigger this, as they pass the
-		 * destination directory (WP_PLUGIN_DIR / wp-content/themes) intending
+		 * destination directory (WP_PLUGIN_DIR / content/themes) intending
 		 * to copy the directory into the directory, whilst they pass the source
 		 * as the actual files to copy.
 		 */

@@ -11,7 +11,7 @@
  * Defines Multisite upload constants.
  *
  * Exists for backward compatibility with legacy file-serving through
- * includes/ms-files.php (wp-content/blogs.php in MU).
+ * includes/ms-files.php (content/blogs.php in MU).
  *
  * @since 3.0.0
  */
@@ -25,10 +25,10 @@ function ms_upload_constants() {
 
 	// Base uploads dir relative to ABSPATH.
 	if ( ! defined( 'UPLOADBLOGSDIR' ) ) {
-		define( 'UPLOADBLOGSDIR', 'wp-content/blogs.dir' );
+		define( 'UPLOADBLOGSDIR', 'content/blogs.dir' );
 	}
 
-	// Note, the main site in a post-MU network uses wp-content/uploads.
+	// Note, the main site in a post-MU network uses content/uploads.
 	// This is handled in wp_upload_dir() by ignoring UPLOADS for this case.
 	if ( ! defined( 'UPLOADS' ) ) {
 		$site_id = get_current_blog_id();
@@ -36,7 +36,7 @@ function ms_upload_constants() {
 		define( 'UPLOADS', UPLOADBLOGSDIR . '/' . $site_id . '/files/' );
 
 		// Uploads dir relative to ABSPATH.
-		if ( 'wp-content/blogs.dir' === UPLOADBLOGSDIR && ! defined( 'BLOGUPLOADDIR' ) ) {
+		if ( 'content/blogs.dir' === UPLOADBLOGSDIR && ! defined( 'BLOGUPLOADDIR' ) ) {
 			define( 'BLOGUPLOADDIR', WP_CONTENT_DIR . '/blogs.dir/' . $site_id . '/files/' );
 		}
 	}
@@ -92,7 +92,7 @@ function ms_cookie_constants() {
  * Defines Multisite file constants.
  *
  * Exists for backward compatibility with legacy file-serving through
- * includes/ms-files.php (wp-content/blogs.php in MU).
+ * includes/ms-files.php (content/blogs.php in MU).
  *
  * @since 3.0.0
  */

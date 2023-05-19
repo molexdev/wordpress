@@ -113,9 +113,9 @@ $help_overview =
 	'<p>' . __( 'You can Search for themes by keyword, author, or tag, or can get more specific and search by criteria listed in the feature filter.' ) . ' <span id="live-search-desc">' . __( 'The search results will be updated as you type.' ) . '</span></p>' .
 	'<p>' . __( 'Alternately, you can browse the themes that are Popular or Latest. When you find a theme you like, you can preview it or install it.' ) . '</p>' .
 	'<p>' . sprintf(
-		/* translators: %s: /wp-content/themes */
+		/* translators: %s: /content/themes */
 		__( 'You can Upload a theme manually if you have already downloaded its ZIP archive onto your computer (make sure it is from a trusted and original source). You can also do it the old-fashioned way and copy a downloaded theme&#8217;s folder via FTP into your %s directory.' ),
-		'<code>/wp-content/themes</code>'
+		'<code>/content/themes</code>'
 	) . '</p>';
 
 get_current_screen()->add_help_tab(

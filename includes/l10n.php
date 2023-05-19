@@ -1244,7 +1244,7 @@ function load_script_translations( $file, $handle, $domain ) {
  * Loads plugin and theme text domains just-in-time.
  *
  * When a textdomain is encountered for the first time, we try to load
- * the translation file from `wp-content/languages`, removing the need
+ * the translation file from `content/languages`, removing the need
  * to call load_plugin_textdomain() or load_theme_textdomain().
  *
  * @since 4.6.0
@@ -1394,7 +1394,7 @@ function get_available_languages( $dir = null ) {
 /**
  * Gets installed translations.
  *
- * Looks in the wp-content/languages directory for translations of
+ * Looks in the content/languages directory for translations of
  * plugins or themes.
  *
  * @since 3.7.0

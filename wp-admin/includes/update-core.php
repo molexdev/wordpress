@@ -956,7 +956,7 @@ $_old_requests_files = array(
 );
 
 /**
- * Stores new files in wp-content to copy
+ * Stores new files in content to copy
  *
  * The contents of this array indicate any new bundled plugins/themes which
  * should be installed with the WordPress Upgrade. These items will not be
@@ -964,7 +964,7 @@ $_old_requests_files = array(
  * introduced version present here being older than the current installed version.
  *
  * The content of this array should follow the following format:
- * Filename (relative to wp-content) => Introduced version
+ * Filename (relative to content) => Introduced version
  * Directories should be noted by suffixing it with a trailing slash (/)
  *
  * @since 3.2.0
@@ -1014,7 +1014,7 @@ $_new_bundled_files = array(
  *   2. Create the .maintenance file in current WordPress base.
  *   3. Copy new WordPress directory over old WordPress files.
  *   4. Upgrade WordPress to new version.
- *     4.1. Copy all files/folders other than wp-content
+ *     4.1. Copy all files/folders other than content
  *     4.2. Copy any language files to WP_LANG_DIR (which may differ from WP_CONTENT_DIR
  *     4.3. Copy any new bundled themes/plugins to their respective locations
  *   5. Delete new WordPress directory path.
@@ -1221,9 +1221,9 @@ function update_core( $from, $to ) {
 	/** This filter is documented in wp-admin/includes/update-core.php */
 	apply_filters( 'update_feedback', __( 'Preparing to install the latest version&#8230;' ) );
 
-	// Don't copy wp-content, we'll deal with that below.
+	// Don't copy content, we'll deal with that below.
 	// We also copy version.php last so failed updates report their old version.
-	$skip              = array( 'wp-content', 'includes/version.php' );
+	$skip              = array( 'content', 'includes/version.php' );
 	$check_is_writable = array();
 
 	// Check to see which files don't really need updating - only available for 3.7 and higher.
@@ -1239,7 +1239,7 @@ function update_core( $from, $to ) {
 
 		if ( is_array( $checksums ) ) {
 			foreach ( $checksums as $file => $checksum ) {
-				if ( 'wp-content' === substr( $file, 0, 10 ) ) {
+				if ( 'content' === substr( $file, 0, 7 ) ) {
 					continue;
 				}
 
@@ -1340,13 +1340,13 @@ function update_core( $from, $to ) {
 		}
 	}
 
-	// Check to make sure everything copied correctly, ignoring the contents of wp-content.
-	$skip   = array( 'wp-content' );
+	// Check to make sure everything copied correctly, ignoring the contents of content.
+	$skip   = array( 'content' );
 	$failed = array();
 
 	if ( isset( $checksums ) && is_array( $checksums ) ) {
 		foreach ( $checksums as $file => $checksum ) {
-			if ( 'wp-content' === substr( $file, 0, 10 ) ) {
+			if ( 'content' === substr( $file, 0, 7 ) ) {
 				continue;
 			}
 
@@ -1400,7 +1400,7 @@ function update_core( $from, $to ) {
 
 	// Custom content directory needs updating now.
 	// Copy languages.
-	if ( ! is_wp_error( $result ) && $wp_filesystem->is_dir( $from . $distro . 'wp-content/languages' ) ) {
+	if ( ! is_wp_error( $result ) && $wp_filesystem->is_dir( $from . $distro . 'content/languages' ) ) {
 		if ( WP_LANG_DIR !== ABSPATH . WPINC . '/languages' || @is_dir( WP_LANG_DIR ) ) {
 			$lang_dir = WP_LANG_DIR;
 		} else {
@@ -1418,7 +1418,7 @@ function update_core( $from, $to ) {
 			$wp_lang_dir = $wp_filesystem->find_folder( $lang_dir );
 
 			if ( $wp_lang_dir ) {
-				$result = copy_dir( $from . $distro . 'wp-content/languages/', $wp_lang_dir );
+				$result = copy_dir( $from . $distro . 'content/languages/', $wp_lang_dir );
 
 				if ( is_wp_error( $result ) ) {
 					$result = new WP_Error(
@@ -1464,7 +1464,7 @@ function update_core( $from, $to ) {
 				list( $type, $filename ) = explode( '/', $file, 2 );
 
 				// Check to see if the bundled items exist before attempting to copy them.
-				if ( ! $wp_filesystem->exists( $from . $distro . 'wp-content/' . $file ) ) {
+				if ( ! $wp_filesystem->exists( $from . $distro . 'content/' . $file ) ) {
 					continue;
 				}
 
@@ -1482,7 +1482,7 @@ function update_core( $from, $to ) {
 						continue;
 					}
 
-					if ( ! $wp_filesystem->copy( $from . $distro . 'wp-content/' . $file, $dest . $filename, FS_CHMOD_FILE ) ) {
+					if ( ! $wp_filesystem->copy( $from . $distro . 'content/' . $file, $dest . $filename, FS_CHMOD_FILE ) ) {
 						$result = new WP_Error( "copy_failed_for_new_bundled_$type", __( 'Could not copy file.' ), $dest . $filename );
 					}
 				} else {
@@ -1491,7 +1491,7 @@ function update_core( $from, $to ) {
 					}
 
 					$wp_filesystem->mkdir( $dest . $filename, FS_CHMOD_DIR );
-					$_result = copy_dir( $from . $distro . 'wp-content/' . $file, $dest . $filename );
+					$_result = copy_dir( $from . $distro . 'content/' . $file, $dest . $filename );
 
 					// If a error occurs partway through this final step, keep the error flowing through, but keep process going.
 					if ( is_wp_error( $_result ) ) {

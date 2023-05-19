@@ -255,8 +255,8 @@ function get_plugin_files( $plugin ) {
  * Checks the plugins directory and retrieve all plugin files with plugin data.
  *
  * WordPress only supports plugin files in the base plugins directory
- * (wp-content/plugins) and in one directory above the plugins directory
- * (wp-content/plugins/my-plugin). The file it looks for has the plugin data
+ * (content/plugins) and in one directory above the plugins directory
+ * (content/plugins/my-plugin). The file it looks for has the plugin data
  * and must be found in those two locations. It is recommended to keep your
  * plugin files in their own directories.
  *
@@ -288,7 +288,7 @@ function get_plugins( $plugin_folder = '' ) {
 		$plugin_root .= $plugin_folder;
 	}
 
-	// Files in wp-content/plugins directory.
+	// Files in content/plugins directory.
 	$plugins_dir  = @opendir( $plugin_root );
 	$plugin_files = array();
 
@@ -354,7 +354,7 @@ function get_plugins( $plugin_folder = '' ) {
 /**
  * Checks the mu-plugins directory and retrieve all mu-plugin files with any plugin data.
  *
- * WordPress only includes mu-plugin files in the base mu-plugins directory (wp-content/mu-plugins).
+ * WordPress only includes mu-plugin files in the base mu-plugins directory (content/mu-plugins).
  *
  * @since 3.0.0
  * @return array[] Array of arrays of mu-plugin data, keyed by plugin file name. See get_plugin_data().
@@ -367,7 +367,7 @@ function get_mu_plugins() {
 		return $wp_plugins;
 	}
 
-	// Files in wp-content/mu-plugins directory.
+	// Files in content/mu-plugins directory.
 	$plugins_dir = @opendir( WPMU_PLUGIN_DIR );
 	if ( $plugins_dir ) {
 		while ( ( $file = readdir( $plugins_dir ) ) !== false ) {
@@ -426,7 +426,7 @@ function _sort_uname_callback( $a, $b ) {
 }
 
 /**
- * Checks the wp-content directory and retrieve all drop-ins with any plugin data.
+ * Checks the content directory and retrieve all drop-ins with any plugin data.
  *
  * @since 3.0.0
  * @return array[] Array of arrays of dropin plugin data, keyed by plugin file name. See get_plugin_data().
@@ -437,7 +437,7 @@ function get_dropins() {
 
 	$_dropins = _get_dropins();
 
-	// Files in wp-content directory.
+	// Files in content directory.
 	$plugins_dir = @opendir( WP_CONTENT_DIR );
 	if ( $plugins_dir ) {
 		while ( ( $file = readdir( $plugins_dir ) ) !== false ) {
