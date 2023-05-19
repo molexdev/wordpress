@@ -1035,7 +1035,7 @@ switch ( $action ) {
 			 *
 			 * @param string $sign_up_url The sign up URL.
 			 */
-			wp_redirect( apply_filters( 'wp_signup_location', network_site_url( 'wp-signup.php' ) ) );
+			wp_redirect( apply_filters( 'wp_signup_location', network_site_url( 'signup.php' ) ) );
 			exit;
 		}
 

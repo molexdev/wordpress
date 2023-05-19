@@ -2114,7 +2114,7 @@ function signup_nonce_fields() {
  * @return array
  */
 function signup_nonce_check( $result ) {
-	if ( ! strpos( $_SERVER['PHP_SELF'], 'wp-signup.php' ) ) {
+	if ( ! strpos( $_SERVER['PHP_SELF'], 'signup.php' ) ) {
 		return $result;
 	}
 
