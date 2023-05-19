@@ -2947,16 +2947,16 @@ class WP_Site_Health {
 			$headers['Authorization'] = 'Basic ' . base64_encode( wp_unslash( $_SERVER['PHP_AUTH_USER'] ) . ':' . wp_unslash( $_SERVER['PHP_AUTH_PW'] ) );
 		}
 
-		$url = site_url( 'wp-cron.php' );
+		$url = site_url( 'cron.php' );
 
 		/*
-		 * A post request is used for the wp-cron.php loopback test to cause the file
+		 * A post request is used for the cron.php loopback test to cause the file
 		 * to finish early without triggering cron jobs. This has two benefits:
 		 * - cron jobs are not triggered a second time on the site health page,
 		 * - the loopback request finishes sooner providing a quicker result.
 		 *
 		 * Using a POST request causes the loopback to differ slightly to the standard
-		 * GET request WordPress uses for wp-cron.php loopback requests but is close
+		 * GET request WordPress uses for cron.php loopback requests but is close
 		 * enough. See https://core.trac.wordpress.org/ticket/52547
 		 */
 		$r = wp_remote_post( $url, compact( 'body', 'cookies', 'headers', 'timeout', 'sslverify' ) );
