@@ -48,7 +48,7 @@ if ( is_robots() ) {
 	do_feed();
 	return;
 } elseif ( is_trackback() ) {
-	require ABSPATH . 'wp-trackback.php';
+	require ABSPATH . 'trackback.php';
 	return;
 }
 

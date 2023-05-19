@@ -1189,7 +1189,7 @@ function get_trackback_url() {
 	if ( get_option( 'permalink_structure' ) ) {
 		$trackback_url = trailingslashit( get_permalink() ) . user_trailingslashit( 'trackback', 'single_trackback' );
 	} else {
-		$trackback_url = get_option( 'siteurl' ) . '/wp-trackback.php?p=' . get_the_ID();
+		$trackback_url = get_option( 'siteurl' ) . '/trackback.php?p=' . get_the_ID();
 	}
 
 	/**
